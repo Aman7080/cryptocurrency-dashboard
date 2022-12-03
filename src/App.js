@@ -1,9 +1,13 @@
 import "./App.css";
-
+import LogoContainer from "./components/LogoContainer";
+import Navbar from "./components/Navbar";
+import ChartCointainer from "./components/ChartCointainer";
 function App() {
   return (
-    <div className=" bg-slate-500">
-      <h1>Tailwind test</h1>
+    <div>
+      <LogoContainer />
+      <Navbar />
+      <ChartCointainer />
     </div>
   );
 }
