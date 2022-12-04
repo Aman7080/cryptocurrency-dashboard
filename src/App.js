@@ -3,13 +3,15 @@ import LogoContainer from "./components/LogoContainer";
 import Navbar from "./components/Navbar";
 import ChartCointainer from "./components/ChartCointainer";
 import Portfolio_Exchange_Coins from "./components/Portfolio_Exchange_Coins";
+import Coins from "./components/Coins";
 function App() {
   return (
     <div>
-      <LogoContainer />
-      <Navbar />
-      <ChartCointainer />
-      <Portfolio_Exchange_Coins/>
+      {/* <LogoContainer /> */}
+      {/* <Navbar /> */}
+      {/* <ChartCointainer /> */}
+      {/* <Portfolio_Exchange_Coins/> */}
+      <Coins/>
     </div>
   );
 }
