@@ -9,8 +9,8 @@ function App() {
   return (
     <>
       <LogoContainer />
-      <div className="flex flex-col md:flex-row m-10 h-full justify-center items-center">
-        <div className=" w-2/3">
+      <div className="flex m-10 h-full">
+        <div className="container h-screen w-9/12 ">
           <div>
             <Navbar />
             <ChartCointainer />

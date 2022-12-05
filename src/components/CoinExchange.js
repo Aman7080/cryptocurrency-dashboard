@@ -11,7 +11,7 @@ function CoinExchange() {
       <div className="flex flex-col">
         <div className="flex justify-around">
           <h4 className="text-orange-600 text-xl">Sell</h4>
-          <div>
+          <div  className="relative">
             <select className=" bg-slate-50 rounded border appearance-none py-2 focus:outline-none focus:border-indigo-500 text-base pl-5 pr-14">
               <option>Bitcoin</option>
               <option>Polygon</option>
