@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <LogoContainer />
-      <div className="flex m-10 h-full">
+      <div className="flex m-10 h-full  content-center">
         <div className="container  h-screen w-9/12 ">
           <div className="">
             <Navbar />

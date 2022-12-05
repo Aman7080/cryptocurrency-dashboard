@@ -1,9 +1,13 @@
 import React from "react";
-
+import BarChart from "./BarChart";
+import CartNavbar from "./CartNavbar";
 export default function ChartCointainer() {
   return (
-    <div className=" h-96 w-full my-5 bg-white rounded-md">
-      <h1>Chat Container Remains</h1>
+    <>
+      <CartNavbar/>   
+    <div className=" h-80 w-full  bg-white rounded-md">
+      <BarChart/>
     </div>
+    </>
   );
 }
