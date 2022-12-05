@@ -2,17 +2,25 @@ import "./App.css";
 import LogoContainer from "./components/LogoContainer";
 import Navbar from "./components/Navbar";
 import ChartCointainer from "./components/ChartCointainer";
-import Portfolio_Exchange_Coins from "./components/Portfolio_Exchange_Coins";
+import PortfolioExchange from "./components/PortfolioExchange";
 import Coins from "./components/Coins";
 function App() {
   return (
-    <div>
-      {/* <LogoContainer /> */}
-      {/* <Navbar /> */}
-      {/* <ChartCointainer /> */}
-      {/* <Portfolio_Exchange_Coins/> */}
-      <Coins/>
-    </div>
+    <>
+      <LogoContainer />
+      <div className="flex m-10 h-full">
+        <div className="container  h-screen w-9/12 ">
+          <div className="">
+            <Navbar />
+            <ChartCointainer />
+            <PortfolioExchange />
+          </div>
+        </div>
+        <div className=" mx-5 bg-slate-50">
+          <Coins />
+        </div>
+      </div>
+    </>
   );
 }
 
