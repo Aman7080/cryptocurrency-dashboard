@@ -5,8 +5,9 @@ export default function Navbar() {
     <div className=" w-full h-8  flex ">
       <div>
         <select name="USD" className="items-center h-8 w-20 pl-4 mr-5  rounded-md drop-shadow-lg">
+          <option selected>USD</option>
           <option value="">INR</option>
-          <option value="">USD</option>
+          <option value=""></option>
         </select>
       </div>
       <div className='w-full'>
