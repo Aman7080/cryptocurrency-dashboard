@@ -32,7 +32,7 @@ function PortfolioContainer() {
   ];
 
   return (
-    <div className="border bg-white rounded-xl p-5 w-full">
+    <div className="bg-white mt-4 rounded-xl p-5 w-full">
       <div className="flex flex-col md:flex-row items-center m-5 justify-between">
         <div>
           <h3 className=" font-bold text-3xl ">Portfolio</h3>
