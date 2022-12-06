@@ -3,13 +3,13 @@ import { BsFillCaretDownFill } from "react-icons/bs";
 function CoinExchange() {
   return (
     <div className="mt-4 bg-white font-[Poppins] rounded-xl p-5 w-full">
-      <div className="flex flex-col md:flex-row items-center m-5 justify-between">
+      <div className="flex flex-col md:flex-row items-center justify-between">
         <div>
-          <h3 className=" font-bold text-3xl ">Exchange Coins</h3>
+          <h3 className=" font-bold text-xl ">Exchange Coins</h3>
         </div>
       </div>
-      <div className="flex flex-col">
-        <div className="flex justify-around">
+      <div className="flex flex-col ">
+        <div className="flex items-center justify-around space-x-5 pt-4 mt-5 ">
           <h4 className="text-orange-600 text-xl">Sell</h4>
           <div className="relative">
             <select
@@ -33,7 +33,7 @@ function CoinExchange() {
             />
           </div>
         </div>
-        <div className="flex justify-around items-center pt-4 mt-5">
+        <div className="flex justify-around items-center pt-4 mt-5 space-x-5">
           <h4 className="text-green-600 text-xl">Buy</h4>
           <div className="relative">
             <select
