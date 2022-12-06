@@ -4,7 +4,7 @@ import { RiArrowDownSFill, RiArrowUpSFill } from 'react-icons/ri';
 const Coins = () => {
     return (
         <>
-        <div className='mx-5'>
+        <div className="mx-5">
             <div className="w-80 h-20 py-4 px-4 rounded-xl bg-white ">
                 <h2 className="text-xl font-semibold font-Roboto ">Cryptocurrency by market cap</h2>
             </div>
@@ -81,7 +81,7 @@ const Coins = () => {
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
         </>
     )
 }
