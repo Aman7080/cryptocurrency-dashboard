@@ -9,12 +9,12 @@ function App() {
   return (
     <>
       <LogoContainer />
-      <div className="flex m-10 h-full">
+      <div className="flex flex-col md:flex-row items-center justify-center m-10 h-full">
         <div className="container h-screen w-9/12 ">
           <div>
             <Navbar />
             <ChartCointainer />
-            <div className="flex space-x-4">
+            <div className="flex flex-col md:flex-row space-x-4">
               <PortfolioContainer />
               <CoinExchange />
             </div>
