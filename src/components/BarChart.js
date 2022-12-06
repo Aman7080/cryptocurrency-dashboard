@@ -1,20 +1,9 @@
 import React from "react";
-// import { Bar } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
+import { Chart as chartjs } from "chart.js/auto"
 
-const BarChart = () => {
-  return (
-    <div>
-      ChartCointainer
-      {/* <Bar
-                data={{
-                    labels:['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange']
-                    
-                }}  
-                height={400}
-                width={600}
-            /> */}
-    </div>
-  );
+const BarChart = ({ chartData }) => {
+  return <Bar data={chartData} />
 };
 
 export default BarChart;

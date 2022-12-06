@@ -1,7 +1,20 @@
-import React from "react";
 import { BsFillCircleFill } from "react-icons/bs";
 
+import { useState } from "react";
+import PieChart from "./PieChart";
+import { UserData } from "../DemoData"
+// coins chart for portfolio block
 function PortfolioContainer() {
+  const [userData, setUserData] = useState({
+    labels: UserData.map((data) => data.year),
+    datasets: [{
+      label: "Etherium",
+      data: UserData.map((data) => data.UserGain),
+      backgroundColor: ["red", "blue"]
+    }]
+  })
+
+  
   // Coins available in porfolio
   const coinsInPortfolio = [
     {
@@ -30,7 +43,9 @@ function PortfolioContainer() {
         </div>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-evenly">
-        <div className="graph border-2 mt-12 rounded-full h-56 w-56"></div>
+        <div className="graph  h-56 w-56">
+          <PieChart chartData={userData} />
+        </div>
         <div>
           {coinsInPortfolio.map((item, index) => (
             <div className="flex items-center my-2" key={index}>

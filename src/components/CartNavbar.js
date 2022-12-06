@@ -21,7 +21,6 @@ const CartNavbar = () => {
                     <option value="">Bar Chart Horizantal</option>
                     <option value="">Line Chart</option>
                     <option value="">Bar Chart Vertical</option>
-
                 </select>
             </div>
         </div>
