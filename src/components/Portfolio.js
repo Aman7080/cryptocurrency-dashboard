@@ -35,7 +35,7 @@ function PortfolioContainer() {
     <div className="container bg-white mt-4 font-['Poppins'] rounded-xl p-5 w-full ">
       <div className="flex flex-col md:flex-row items-center md:m-2 justify-between flex-1">
         <div>
-          <h3 className=" font-semibold text-xl ">Portfolio</h3>
+          <h3 className=" font-bold text-xl ">Portfolio</h3>
         </div>
         <div className="flex flex-col text-xl items-center md:flex-row ">
           <p className=" text-slate-400 ">Total Value </p>

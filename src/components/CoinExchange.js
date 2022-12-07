@@ -14,7 +14,7 @@ function CoinExchange() {
           <div className="relative">
             <select
               defaultValue="ethereum"
-              className=" bg-slate-50 rounded border appearance-none py-2 text-gray-600 focus:outline-none focus:border-indigo-500 text-base pl-5 pr-14"
+              className=" bg-slate-50 rounded border appearance-none py-2 text-gray-600 focus:outline-none focus:border-indigo-500 font-medium text-base pl-5 pr-14"
             >
               <option value="bitcoin">Bitcoin</option>
               <option value="polygon">Polygon</option>
@@ -29,7 +29,7 @@ function CoinExchange() {
             <input
               type="text"
               placeholder="Avl:0.002BTC"
-              className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-orange-600 py-1 px-3 leading-8"
+              className="w-full bg-gray-100 bg-opacity-50 rounded border-2 border-gray-300 focus:border-orange-500 text-base outline-none text-black py-1 px-3 leading-8"
             />
           </div>
         </div>
@@ -38,7 +38,7 @@ function CoinExchange() {
           <div className="relative">
             <select
               defaultValue="bitcoin"
-              className=" bg-slate-50 rounded border appearance-none py-2 focus:outline-none focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
+              className=" bg-slate-50 rounded border appearance-none py-2 focus:outline-none font-medium focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
             >
               <option value="bitcoin">Bitcoin</option>
               <option value="polygon">Polygon</option>
@@ -53,7 +53,8 @@ function CoinExchange() {
             <input
               type="text"
               placeholder="Avl:0.002BTC"
-              className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-green-600 py-1 px-3 leading-8"
+              className="w-full rounded text-base outline-none text-green-600 py-1 px-3 leading-8"
+              disabled
             />
           </div>
         </div>

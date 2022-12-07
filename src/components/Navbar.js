@@ -6,7 +6,7 @@ export default function Navbar() {
       <div className="relative">
         <select
           defaultValue="usd"
-          className="h-14 bg-slate-50 rounded border appearance-none py-2 focus:outline-none focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
+          className="h-14 bg-white rounded-xl appearance-none py-2 focus:outline-none focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
         >
           <option value="usd">USD</option>
           <option value="inr">INR</option>
@@ -15,12 +15,12 @@ export default function Navbar() {
           <BsFillCaretDownFill />
         </span>
       </div>
-      <div className="flex mx-3 flex-1 items-center rounded-md bg-white h-14">
+      <div className="flex ml-3 flex-1 items-center rounded-lg bg-white h-14">
         <div className=" ml-8 mr-5 text-4xl text-slate-500 ">
           <BsSearch />
         </div>
         <input
-          className=" h-11 w-full border-0 bg-transparent outline-0 ring-0 px-2 pl-0 text-slate-600"
+          className=" h-11 w-full border-0 bg-transparent rounded-xl outline-0 pl-2 text-slate-600 focus:outline-none"
           placeholder="Search by Coin"
         />
       </div>
