@@ -1,29 +1,28 @@
-import { CiSearch } from "react-icons/ci";
+import { BsSearch, BsFillCaretDownFill } from "react-icons/bs";
 
 export default function Navbar() {
   return (
-    <div className=" w-full h-8  flex ">
-      <div>
-        <select name="USD" className="items-center h-8 w-20 pl-4 mr-5  rounded-md drop-shadow-lg">
-          <option selected>USD</option>
+    <div className=" w-full font-['Poppins'] flex my-4">
+      <div className="relative">
         <select
-          name="USD"
-          className="items-center h-8 w-20 pl-4 mr-5  rounded-md drop-shadow-lg"/>
-          <option value="">INR</option>
+          defaultValue="usd"
+          className="h-14 bg-white rounded-xl appearance-none py-2 focus:outline-none focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
+        >
+          <option value="usd">USD</option>
+          <option value="inr">INR</option>
         </select>
+        <span className="absolute right-0 top-0 h-full w-10 text-center text-black font-black pointer-events-none flex items-center justify-center">
+          <BsFillCaretDownFill />
+        </span>
       </div>
-      <div className="w-full">
-        <form>
-          <div className="flex relative ">
-            <CiSearch size="1.5rem" />
-            {/* <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg> */}
-            <input
-              className="h-8 w-full  rounded-md pl-5 drop-shadow-lg"
-              type="search"
-              placeholder="Search by coin."
-            />
-          </div>
-        </form>
+      <div className="flex ml-3 flex-1 items-center rounded-lg bg-white h-14">
+        <div className=" ml-8 mr-5 text-4xl text-slate-500 ">
+          <BsSearch />
+        </div>
+        <input
+          className=" h-11 w-full border-0 bg-transparent rounded-xl outline-0 pl-2 text-slate-600 focus:outline-none"
+          placeholder="Search by Coin"
+        />
       </div>
     </div>
   );
