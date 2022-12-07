@@ -4,7 +4,7 @@ import { mktCap } from "../Data/MktCap";
 const Coins = () => {
   return (
     <>
-      <div className="m-5 bg-white w-80">
+      <div className="m-5 bg-white w-full">
         <div className=" p-5 rounded-xl  ">
           <h2 className="text-xl font-semibold font-Roboto ">
             Cryptocurrency by market cap
@@ -13,7 +13,7 @@ const Coins = () => {
         <div className="coins rounded-xl ">
           {mktCap.map((coin) => (
             <div
-              className="coin-info flex justify-between bg-white mb-0.5 p-5"
+              className="coin-info border-b-[0.05rem] flex justify-between bg-white mb-0.5 p-5"
               key={coin.id}
             >
               {" "}
@@ -46,91 +46,7 @@ const Coins = () => {
               )}
             </div>
           ))}
-          {/* <div className="coin-info flex justify-between bg-white mb-0.5 p-5">
-            <div className="coin-name ">
-              <h3 className="font-bold">Tether</h3>
-              <p className="text-sm text-slate-600">Mkt.cap $198.432</p>
-            </div>
-            <div className="coin-rate flex bg-white items-center">
-              <p>
-                <RiArrowUpSFill size="2rem" color="green" />
-              </p>
-              <h4 className="text-green-600 font-semibold">2112%</h4>
-            </div>
-          </div> */}
-
-          {/* <div className="coin-info flex bg-white mb-0.5 justify-between p-5">
-            <div className="coin-name ">
-              <h3 className="font-bold">Bitcoin</h3>
-              <p className="text-sm text-slate-600">Mkt.cap $198.432</p>
-            </div>
-            <div className="coin-rate flex bg-white items-center">
-              <p>
-                <RiArrowDownSFill size="2rem" color="red" />
-              </p>
-              <h4 className="text-red-600 font-semibold">212%</h4>
-            </div>
-          </div> */}
-          {/* <div className="coin-info flex bg-white mb-0.5 justify-between p-5">
-            <div className="coin-name ">
-              <h3 className="font-bold">Bitcoin</h3>
-              <p className="text-sm text-slate-600">Mkt.cap $198.432</p>
-            </div>
-            <div className="coin-rate flex bg-white items-center">
-              <p>
-                <RiArrowDownSFill size="2rem" color="red" />
-              </p>
-              <h4 className="text-red-600 font-semibold">212%</h4>
-            </div>
-          </div> */}
-          {/* <div className="coin-info flex bg-white mb-0.5 justify-between p-5">
-            <div className="coin-name ">
-              <h3 className="font-bold">Tether</h3>
-              <p className="text-sm text-slate-600">Mkt.cap $198.432</p>
-            </div>
-            <div className="coin-rate flex items-center">
-              <p>
-                <RiArrowUpSFill size="2rem" color="green" />
-              </p>
-              <h4 className="text-green-600 font-semibold">212%</h4>
-            </div>
-          </div> */}
-          {/* <div className="coin-info flex bg-white mb-0.5 justify-between p-5">
-            <div className="coin-name ">
-              <h3 className="font-bold">Tether</h3>
-              <p className="text-sm text-slate-600">Mkt.cap $198.432</p>
-            </div>
-            <div className="coin-rate flex items-center">
-              <p>
-                <RiArrowUpSFill size="2rem" color="green" />
-              </p>
-              <h4 className="text-green-600 font-semibold">212%</h4>
-            </div>
-          </div> */}
-          {/* <div className="coin-info flex bg-white mb-0.5 justify-between p-5">
-            <div className="coin-name ">
-              <h3 className="font-bold">Bitcoin</h3>
-              <p className="text-sm text-slate-600">Mkt.cap $198.432</p>
-            </div>
-            <div className="coin-rate flex items-center">
-              <p>
-                <RiArrowDownSFill size="2rem" color="red" />
-              </p>
-              <h4 className="text-red-600 font-semibold">212%</h4>
-            </div>
-          </div> */}
-          {/* <div className="coin-info flex bg-white mb-0.5 justify-between p-5">
-            <div className="coin-name ">
-              <h3 className="font-bold">Bitcoin</h3>
-              <p className="text-sm text-slate-600">Mkt.cap $198.432</p>
-            </div>
-            <div className="coin-rate flex items-center">
-              <p>
-                <RiArrowDownSFill size="2rem" color="red" />
-              </p>
-              <h4 className="text-red-600 font-semibold">212%</h4>
-            </div>
-          </div> */}
+          
         </div>
       </div>
     </>
