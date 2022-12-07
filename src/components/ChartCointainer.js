@@ -3,10 +3,8 @@ import React, { useState } from "react";
 import CartNavbar from "./ChartNavbar";
 import LineChart from "./LineChart";
 import { UserData } from "../DemoData"
-// import PieChart from "./PieChart";
 
 export default function ChartCointainer() {
-
 
   const [userData, setUserData] = useState({
     labels: UserData.map((data) => data.year),
@@ -25,7 +23,6 @@ export default function ChartCointainer() {
       <div className="  bg-white rounded-md">
         <LineChart chartData={userData} />
         {/* <BarChart chartData={userData} /> */}
-        {/* <PieChart chartData={userData}/> */}
       </div>
     </>
   );
