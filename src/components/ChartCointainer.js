@@ -3,7 +3,7 @@ import BarChart from "./BarChart";
 import CartNavbar from "./CartNavbar";
 import LineChart from "./LineChart";
 import { UserData } from "../DemoData"
-import PieChart from "./PieChart";
+// import PieChart from "./PieChart";
 
 export default function ChartCointainer() {
 
