@@ -4,7 +4,7 @@ import { mktCap } from "../Data/MktCap";
 const Coins = () => {
   return (
     <>
-      <div className="m-5 bg-white w-full">
+      <div className="m-5 shadow-lg hover:duration-300 hover:shadow-2xl bg-white w-full">
         <div className=" p-5 rounded-xl  ">
           <h2 className="text-xl font-semibold font-Roboto ">
             Cryptocurrency by market cap

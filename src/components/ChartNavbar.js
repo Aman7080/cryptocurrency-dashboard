@@ -2,7 +2,7 @@ import { BsFillCaretDownFill } from "react-icons/bs";
 import { cryptocoins } from "../Data/cryptocoins";
 const CartNavbar = () => {
   return (
-    <div className="container flex flex-col md:flex-row justify-center md:justify-around items-center bg-white space-y-4 md:space-y-0 p-5">
+    <div className="container shadow-lg hover:shadow-2xl flex flex-col md:flex-row justify-center md:justify-around items-center bg-white space-y-4 md:space-y-0 p-5">
       <div className="flex">
         <button className="w-12 h-8 font-semibold rounded-md mx-1 bg-slate-100 text-slate-500 hover:border-2 hover:border-blue-500 hover:text-blue-500">
           1D

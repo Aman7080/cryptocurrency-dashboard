@@ -30,7 +30,7 @@ export default function ChartCointainer() {
     <>
       <CartNavbar />
 
-      <div className=" bg-white rounded-md">
+      <div className=" bg-white shadow-lg hover:duration-300 hover:shadow-2xl rounded-md">
         <Line data={userData} options={options} />
       </div>
     </>
