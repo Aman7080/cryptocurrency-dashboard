@@ -1,34 +1,28 @@
 import { Pie } from "react-chartjs-2";
 import { Chart as chartjs } from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
+import { useSelector } from "react-redux";
 
 function PortfolioContainer() {
   // Coins available in porfolio
-  const coinsInPortfolio = [
-    {
-      name: "Tether",
-      value: "375",
-      color: "red",
-    },
-    {
-      name: "Luna",
-      value: "375",
-      color: "blue",
-    },
-    {
-      name: "Ethereum",
-      value: "250",
-      color: "green",
-    },
-  ];
+  const cryptoInPortfolio = useSelector((state) => state.cryptoPortfolio);
+
+  // calculating money available in portfolio
+  let totalValue = 0;
+  cryptoInPortfolio.forEach((crypto) => {
+    totalValue = parseInt(totalValue) + parseInt(crypto.value);
+  });
+
   // coins chart setup for portfolio block
   const data = {
-    labels: coinsInPortfolio.map((coins) => coins.name),
+    labels: cryptoInPortfolio.map(
+      (crypto) => crypto.name.charAt(0).toUpperCase() + crypto.name.slice(1)
+    ),
     datasets: [
       {
         label: "Cryptocurrency",
-        data: coinsInPortfolio.map((coins) => coins.value),
-        backgroundColor: coinsInPortfolio.map((coins) => coins.color),
+        data: cryptoInPortfolio.map((crypto) => crypto.value),
+        backgroundColor: cryptoInPortfolio.map((crypto) => crypto.color),
       },
     ],
   };
@@ -71,21 +65,13 @@ function PortfolioContainer() {
         </div>
         <div className="flex flex-col text-xl items-center md:flex-row ">
           <p className=" text-slate-400 ">Total Value </p>
-          <p className=" text-black font-semibold">$1000</p>
+          <p className=" text-black font-semibold">${totalValue}</p>
         </div>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-evenly">
         <div className="graph">
           <Pie data={data} plugins={[ChartDataLabels]} options={options} />
         </div>
-        {/* <div>
-          {coinsInPortfolio.map((item, index) => (
-            <div className="flex items-center my-2" key={index}>
-              <BsFillCircleFill style={{ color: `${item.color}` }} />
-              <p className="text-2xl ml-3">{item.name}</p>
-            </div>
-          ))}
-        </div> */}
       </div>
     </div>
   );
