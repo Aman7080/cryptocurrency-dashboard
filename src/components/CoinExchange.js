@@ -2,7 +2,7 @@ import { BsFillCaretDownFill } from "react-icons/bs";
 
 function CoinExchange() {
   return (
-    <div className="mt-4 bg-white font-[Poppins] rounded-xl p-5 w-full">
+    <div className="mt-4 hover:duration-300 hover:shadow-2xl bg-white shadow-lg font-[Poppins] rounded-xl p-5 w-full">
       <div className="flex flex-col md:flex-row items-center justify-between">
         <div>
           <h3 className=" font-bold mt-2 text-xl ">Exchange Coins</h3>
@@ -59,7 +59,7 @@ function CoinExchange() {
           </div>
         </div>
         <div className="flex justify-center pt-8">
-          <button className="bg-blue-600 text-white py-2 px-3 rounded-md hover:bg-white hover:border-2 hover:border-sky-600/100 hover:duration-300 hover:text-sky-600 border-2 border-white">
+          <button className="bg-blue-600 text-white py-2 px-3 rounded-md hover:bg-white hover:border-2 hover:border-sky-600/100 hover:duration-300 hover:shadow-lg hover:text-sky-600 border-2 border-white">
             Exchange
           </button>
         </div>

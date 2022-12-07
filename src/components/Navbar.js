@@ -3,11 +3,11 @@ import { FiSearch} from "react-icons/fi";
 
 export default function Navbar() {
   return (
-    <div className=" w-full font-['Poppins'] flex my-4">
+    <div className="w-full font-['Poppins'] flex my-4">
       <div className="relative">
         <select
           defaultValue="usd"
-          className="h-14 bg-white rounded-xl appearance-none py-2 focus:outline-none focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
+          className="h-14 shadow-md hover:duration-300 hover:shadow-xl bg-white rounded-xl appearance-none py-2 focus:outline-none focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
         >
           <option value="usd">USD</option>
           <option value="inr">INR</option>
@@ -16,7 +16,7 @@ export default function Navbar() {
           <BsFillCaretDownFill />
         </span>
       </div>
-      <div className="flex ml-3 flex-1 items-center rounded-lg bg-white h-14">
+      <div className="flex ml-3 hover:duration-300 hover:shadow-xl shadow-md flex-1 items-center rounded-lg bg-white h-14">
         <div className=" ml-8 mr-5 text-3xl text-slate-500 ">
           <FiSearch />
         </div>
