@@ -59,7 +59,7 @@ function CoinExchange() {
           </div>
         </div>
         <div className="flex justify-center pt-8">
-          <button className="bg-blue-600 text-white py-2 px-3 rounded-md">
+          <button className="bg-blue-600 text-white py-2 px-3 rounded-md hover:bg-white hover:border-2 hover:border-sky-600/100 hover:duration-300 hover:text-sky-600 border-2 border-white">
             Exchange
           </button>
         </div>
