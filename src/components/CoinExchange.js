@@ -5,7 +5,7 @@ function CoinExchange() {
     <div className="mt-4 bg-white font-[Poppins] rounded-xl p-5 w-full">
       <div className="flex flex-col md:flex-row items-center justify-between">
         <div>
-          <h3 className=" font-bold text-xl ">Exchange Coins</h3>
+          <h3 className=" font-bold mt-2 text-xl ">Exchange Coins</h3>
         </div>
       </div>
       <div className="flex flex-col ">
