@@ -1,18 +1,18 @@
 import { useState } from "react";
 import { BsFillCaretDownFill } from "react-icons/bs";
-import { useDispatch } from "react-redux";
-import { buycoin } from "../state/features/exchangeCoin";
+import { useDispatch, useSelector } from "react-redux";
+import { buycoin, sellcoin } from "../state/features/exchangeCoin";
 
 function CoinExchange() {
-  // const [exchangeType, setExchangeType] = useState("buy");
-  const [value, setValue] = useState(0);
+  const [exchangeType, setExchangeType] = useState("buy");
+  const [buyValue, setBuyValue] = useState(0);
+  const [sellValue, setSellValue] = useState(0);
   const [coin, setCoin] = useState("bitcoin");
-  // const [error, setError] = useState(null);
+  const [error, setError] = useState(null);
 
   const dispatch = useDispatch();
 
   const handleBuy = () => {
-    console.log("handlebuy");
     // color for pie chart
     const randColor = () => {
       return (
@@ -24,24 +24,24 @@ function CoinExchange() {
       );
     };
 
-    dispatch(buycoin({ name: coin, value: value, color: randColor() }));
+    dispatch(buycoin({ name: coin, value: buyValue, color: randColor() }));
 
-    setValue(0);
+    setBuyValue(0);
     setCoin("bitcoin");
   };
 
-  // const cryptoInPortfolio = useSelector((state) => state.cryptoPortfolio);
+  const cryptoInPortfolio = useSelector((state) => state.cryptoPortfolio);
 
-  // const handleSell = () => {
-  //   if (cryptoInPortfolio.find((crypto) => crypto.name === coin)) {
-  //     dispatch(sellcoin({ name: coin, value: value }));
-  //   } else {
-  //     setError("coin not available");
-  //     console.log(error);
-  //   }
-  //   setValue(0);
-  //   setCoin("bitcoin");
-  // };
+  const handleSell = () => {
+    if (cryptoInPortfolio.find((crypto) => crypto.name === coin)) {
+      dispatch(sellcoin({ name: coin, value: sellValue }));
+    } else {
+      setError("coin not available");
+      console.log(error);
+    }
+    setSellValue(0);
+    setCoin("bitcoin");
+  };
 
   return (
     <div className="mt-4 hover:duration-300 hover:shadow-2xl bg-white shadow-lg font-[Poppins] rounded-xl p-5 w-full">
@@ -50,18 +50,24 @@ function CoinExchange() {
           <h3 className=" font-bold mt-2 text-xl ">Exchange Coins</h3>
         </div>
       </div>
-       <div className="flex flex-col ">
+      <div className="flex flex-col ">
         <div className="flex items-center justify-around space-x-5 pt-4 mt-5 ">
           <h4 className="text-orange-600 text-xl">Sell</h4>
           <div className="relative">
             <select
-              defaultValue="ethereum"
+              value={coin}
+              onChange={(e) => {
+                setCoin(e.target.value);
+                setExchangeType("sell");
+              }}
               className=" bg-slate-50 rounded border appearance-none py-2 text-gray-600 focus:outline-none focus:border-indigo-500 font-medium text-base pl-5 pr-14"
             >
               <option value="bitcoin">Bitcoin</option>
               <option value="polygon">Polygon</option>
               <option value="ethereum">Ethereum</option>
               <option value="tron">Tron</option>
+              <option value="luna">Luna</option>
+              <option value="tether">Tether</option>
             </select>
             <span className="absolute right-0 top-0 h-full w-10 text-center text-black pointer-events-none flex items-center justify-center">
               <BsFillCaretDownFill />
@@ -70,7 +76,9 @@ function CoinExchange() {
           <div>
             <input
               type="text"
-              placeholder="Avl:0.002BTC"
+              //placeholder="Avl:0.002BTC"
+              value={sellValue}
+              onChange={(e) => setSellValue(e.target.value)}
               className="w-full bg-gray-100 bg-opacity-50 rounded border-2 border-gray-300 focus:border-orange-500 text-base outline-none text-black py-1 px-3 leading-8"
             />
           </div>
@@ -80,13 +88,18 @@ function CoinExchange() {
           <div className="relative">
             <select
               value={coin}
-              onChange={(e) => setCoin(e.target.value)}
+              onChange={(e) => {
+                setCoin(e.target.value);
+                setExchangeType("buy");
+              }}
               className=" bg-slate-50 rounded border appearance-none py-2 focus:outline-none font-medium focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
             >
               <option value="bitcoin">Bitcoin</option>
               <option value="polygon">Polygon</option>
               <option value="ethereum">Ethereum</option>
               <option value="tron">Tron</option>
+              <option value="luna">Luna</option>
+              <option value="tether">Tether</option>
             </select>
             <span className="absolute right-0 top-0 h-full w-10 text-center text-black font-black pointer-events-none flex items-center justify-center">
               <BsFillCaretDownFill />
@@ -98,21 +111,23 @@ function CoinExchange() {
               //placeholder="Avl:0.002BTC"
               className="w-full rounded text-base outline-none text-green-600 py-1 px-3 leading-8"
               // disabled
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
+              value={buyValue}
+              onChange={(e) => setBuyValue(e.target.value)}
             />
           </div>
         </div>
         <div className="flex justify-center pt-8">
           <button
-            disabled={!(value > 0)}
-            onClick={handleBuy}
+            disabled={
+              exchangeType === "buy" ? !(buyValue > 0) : !(sellValue > 0)
+            }
+            onClick={exchangeType === "buy" ? handleBuy : handleSell}
             className="bg-blue-600 text-white py-2 px-3 rounded-md hover:bg-white hover:border-2 hover:border-sky-600/100 hover:duration-300 hover:text-sky-600 border-2 border-white disabled:opacity-70"
           >
             Exchange
           </button>
         </div>
-      </div> 
+      </div>
 
       {/* <ul className="flex text-lg font-medium text-center text-gray-500 justify-center mt-4 ">
         <li>

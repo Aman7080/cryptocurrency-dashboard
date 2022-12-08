@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [
+let initialState = [
   {
     name: "tether",
     value: "375",
@@ -36,6 +36,10 @@ export const coinSlice = createSlice({
       const existingCrypto = state.find((crypto) => crypto.name === name);
       if (existingCrypto) {
         existingCrypto.value = parseInt(existingCrypto.value) - parseInt(value);
+      }
+      const index = state.indexOf(state.find((crypto) => crypto.value === 0));
+      if (index >= 0) {
+        state.splice(index, 1);
       }
     },
   },
