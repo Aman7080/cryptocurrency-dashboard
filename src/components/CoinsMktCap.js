@@ -4,13 +4,13 @@ import { mktCap } from "../Data/MktCap";
 const Coins = () => {
   return (
     <>
-      <div className="m-5 shadow-lg hover:duration-300 hover:shadow-2xl bg-white w-full">
+      <div className="m-5 shadow-lg hover:duration-300 hover:shadow-2xl bg-white">
         <div className=" p-5 rounded-xl  ">
-          <h2 className="text-xl font-semibold font-Roboto ">
+          <h2 className="text-xl font-black font-comfortaa">
             Cryptocurrency by market cap
           </h2>
         </div>
-        <div className="coins rounded-xl ">
+        <div className="coins m-6 rounded-xl ">
           {mktCap.map((coin) => (
             <div
               className="coin-info border-b-[0.05rem] flex justify-between bg-white mb-0.5 p-5"

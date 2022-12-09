@@ -4,8 +4,8 @@ import Dropdown from "./Dropdown";
 
 const CartNavbar = () => {
   return (
-    <div className="container shadow-lg hover:shadow-2xl flex flex-col md:flex-row justify-center md:justify-around items-center bg-white space-y-4 md:space-y-0 p-5">
-      <div className="flex">
+    <div className="container max-sm:m-1 shadow-lg hover:shadow-2xl flex flex-col md:flex-row justify-center md:justify-around items-center bg-white space-y-4 md:space-y-0 p-5">
+      <div className="flex max-sm:w-52">
         <button className="w-12 h-8 font-semibold rounded-md mx-1 bg-slate-100 text-slate-500 hover:border-2 hover:border-blue-500 hover:text-blue-500">
           1D
         </button>
@@ -44,7 +44,7 @@ const CartNavbar = () => {
         <div className="relative my-2 ">
           <select
             defaultValue="chart"
-            className=" bg-slate-50 h-14 rounded border appearance-none py-2 focus:outline-none focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
+            className=" bg-slate-50 max-sm:w-40 h-14 rounded border appearance-none py-2 focus:outline-none focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
           >
             <option value="chart">Chart type</option>
             <option value="barHorizontal">Bar Chart Horizantal</option>
