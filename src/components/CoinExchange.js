@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { buycoin, sellcoin } from "../state/features/exchangeCoin";
 
 function CoinExchange() {
+ 
   const [exchangeType, setExchangeType] = useState("buy");
   const [buyValue, setBuyValue] = useState(0);
   const [sellValue, setSellValue] = useState(0);
@@ -14,6 +15,7 @@ function CoinExchange() {
 
   const handleBuy = () => {
     // color for pie chart
+  
     const randColor = () => {
       return (
         "#" +
@@ -29,10 +31,9 @@ function CoinExchange() {
     setBuyValue(0);
     setCoin("bitcoin");
   };
-
   const cryptoInPortfolio = useSelector((state) => state.cryptoPortfolio);
-
   const handleSell = () => {
+
     if (cryptoInPortfolio.find((crypto) => crypto.name === coin)) {
       dispatch(sellcoin({ name: coin, value: sellValue }));
     } else {

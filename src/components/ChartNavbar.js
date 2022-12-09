@@ -1,5 +1,5 @@
 import { BsFillCaretDownFill } from "react-icons/bs";
-import { cryptocoins } from "../Data/cryptocoins";
+// import { cryptocoins } from "../Data/cryptocoins";
 import Dropdown from "./Dropdown";
 
 const CartNavbar = () => {

@@ -1,3 +1,4 @@
+// for exchanging crypto currency from portfolio
 import { createSlice } from "@reduxjs/toolkit";
 
 let initialState = [
@@ -18,7 +19,7 @@ let initialState = [
   },
 ];
 
-export const coinSlice = createSlice({
+const coinSlice = createSlice({
   name: "cryptoPortfolio",
   initialState,
   reducers: {

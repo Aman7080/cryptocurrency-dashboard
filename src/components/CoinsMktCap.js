@@ -31,7 +31,7 @@ const Coins = () => {
                     <RiArrowDownSFill size="2rem" color="red" />
                   </p>
                   <h4 className="text-red-600 font-semibold">
-                    {coin.price_change_24h.toFixed(4)}%
+                    {coin.market_cap_change_percentage_24h.toFixed(4)}%
                   </h4>
                 </div>
               ) : (
@@ -46,7 +46,6 @@ const Coins = () => {
               )}
             </div>
           ))}
-          
         </div>
       </div>
     </>

@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 function PortfolioContainer() {
   // Coins available in porfolio
   const cryptoInPortfolio = useSelector((state) => state.cryptoPortfolio);
+  //const currency = useSelector((state) => state.defaultCurrency)[0];
 
   // calculating money available in portfolio
   let totalValue = 0;
@@ -26,7 +27,7 @@ function PortfolioContainer() {
       },
     ],
   };
-
+//chart.options.plugins.legend.align
   // option for removing x axis grid line
   const options = {
     plugins: {
@@ -65,7 +66,7 @@ function PortfolioContainer() {
         </div>
         <div className="flex flex-col text-xl items-center md:flex-row ">
           <p className=" text-slate-400 ">Total Value </p>
-          <p className=" text-black font-semibold">${totalValue}</p>
+          <p className=" text-black font-semibold">{totalValue}</p>
         </div>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-evenly">

@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import {  useState } from "react";
 import { cryptocoins } from "../Data/cryptocoins";
 import { BsFillCaretDownFill } from "react-icons/bs";
 import {RxCheckbox} from "react-icons/rx"
@@ -97,11 +97,10 @@ const Select = ({
 };
 
 function Dropdown() {
-    let coinsName=cryptocoins;
   return (
       <div class="relative py-3 sm:max-w-xl sm:mx-auto">
         <div className="w-48">
-          <Select options={["Mick Poulaz", "Julien Schiano", "Aman",'data se link kr do'] } />
+          <Select options={cryptocoins.map((crypto)=> crypto.name) } />
         </div>
       </div>
   );
