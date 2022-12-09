@@ -1,5 +1,7 @@
 import { BsFillCaretDownFill } from "react-icons/bs";
 import { cryptocoins } from "../Data/cryptocoins";
+import Dropdown from "./Dropdown";
+
 const CartNavbar = () => {
   return (
     <div className="container shadow-lg hover:shadow-2xl flex flex-col md:flex-row justify-center md:justify-around items-center bg-white space-y-4 md:space-y-0 p-5">
@@ -20,8 +22,10 @@ const CartNavbar = () => {
           1Y
         </button>
       </div>
-      <div className="flex flex-col md:flex-row space-x-4 items-center justify-center">
-        <div className="relative my-2">
+      <div className="">
+      <Dropdown/>
+
+        {/* <div className="relative my-2">
           <select
             defaultValue="crypto"
             className=" bg-slate-50 rounded border appearance-none py-2 focus:outline-none focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
@@ -29,18 +33,18 @@ const CartNavbar = () => {
             <option value="crypto">Cryptocurrency</option>
             {cryptocoins.map((coins) => (
               <option key={coins.id} value={coins.symbol}>
-                {coins.name}
+                <label>   {coins.name}</label>
               </option>
             ))}
           </select>
           <span className="absolute right-0 top-0 h-full w-10 text-center text-black font-black pointer-events-none flex items-center justify-center">
             <BsFillCaretDownFill />
-          </span>
+          </span> */}
         </div>
-        <div className="relative my-2">
+        <div className="relative my-2 ">
           <select
             defaultValue="chart"
-            className=" bg-slate-50 rounded border appearance-none py-2 focus:outline-none focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
+            className=" bg-slate-50 h-14 rounded border appearance-none py-2 focus:outline-none focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
           >
             <option value="chart">Chart type</option>
             <option value="barHorizontal">Bar Chart Horizantal</option>
@@ -52,7 +56,7 @@ const CartNavbar = () => {
           </span>
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 

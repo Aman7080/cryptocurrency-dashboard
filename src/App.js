@@ -5,6 +5,7 @@ import ChartCointainer from "./components/ChartCointainer";
 import Coins from "./components/CoinsMktCap";
 import Portfolio from "./components/Portfolio";
 import CoinExchange from "./components/CoinExchange";
+
 function App() {
   return (
     <>
