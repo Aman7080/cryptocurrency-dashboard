@@ -12,7 +12,7 @@ const Coins = () => {
             </h2>
           </div>
         {/* </div> */}
-        <div className="coins  m-6 rounded-xl  overflow-y-auto max-h-screen ">
+        <div className="coins  m-6 rounded-xl  overflow-y-auto max-h-screen scroll-smooth scrollbar-hide">
           {mktCap.map((coin) => (
             <div
               className="coin-info border-b-[0.05rem] flex justify-between bg-white mb-0.5 p-5"
