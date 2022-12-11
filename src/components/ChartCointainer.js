@@ -39,6 +39,7 @@ export default function ChartCointainer() {
         align: "end",
       },
     },
+    
     scales: {
       x: {
         grid: {
