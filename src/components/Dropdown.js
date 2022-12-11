@@ -1,7 +1,10 @@
-import {  useState } from "react";
+import React, {  useState, useEffect } from "react";
 import { cryptocoins } from "../Data/cryptocoins";
 import { BsFillCaretDownFill } from "react-icons/bs";
 import {RxCheckbox} from "react-icons/rx"
+import Multiselect from "multiselect-react-dropdown";
+
+
 
 const SelectOption = ({ value = "", active = false, updateValue, icon }) => {
   const handleChange = (e) => {
@@ -97,9 +100,21 @@ const Select = ({
 };
 
 function Dropdown() {
+  const [options, setOption] = useState(['op1','op2','te1']);
+  const [coins, setCoins]=useState([]);
+
   return (
       <div class="relative py-3 sm:max-w-xl sm:mx-auto">
         <div className="w-48">
+          <Multiselect
+            isObject={false}
+            options={ cryptocoins.map((crypto)=> crypto.name)  }
+            onRemove={(event)=>{console.log(event)}}
+            onSelect={(event)=>{console.log(event)}}
+
+            showCheckbox
+
+          />
           <Select options={cryptocoins.map((crypto)=> crypto.name) } />
         </div>
       </div>
