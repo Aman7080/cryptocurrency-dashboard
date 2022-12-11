@@ -45,7 +45,7 @@ const CartNavbar = () => {
         <div className="relative my-2 ">
           <select
             defaultValue="chart"
-            className=" bg-slate-50 max-sm:w-40 h-14 rounded border appearance-none py-2 focus:outline-none focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
+            className=" bg-slate-50 max-sm:w-40 h-12 rounded border appearance-none py-2 focus:outline-none focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
           >
             <option value="chart">Chart type</option>
             <option value="barHorizontal">Bar Chart Horizantal</option>
