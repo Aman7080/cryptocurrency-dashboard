@@ -4,13 +4,15 @@ import { mktCap } from "../Data/MktCap";
 const Coins = () => {
   return (
     <>
-      <div className="m-5 shadow-lg hover:duration-300 hover:shadow-2xl bg-white">
-        <div className=" p-5 rounded-xl  ">
-          <h2 className="text-xl font-black font-comfortaa">
-            Cryptocurrency by market cap
-          </h2>
-        </div>
-        <div className="coins m-6 rounded-xl ">
+      <div className="m-5 h-max shadow-lg hover:duration-300 hover:shadow-2xl rounded-lg bg-white">
+        {/* <div className=" "> */}
+          <div className=" p-5 rounded-xl  bg-white">
+            <h2 className="text-xl font-black font-comfortaa">
+              Cryptocurrency by market cap
+            </h2>
+          </div>
+        {/* </div> */}
+        <div className="coins  m-6 rounded-xl  overflow-y-auto max-h-screen ">
           {mktCap.map((coin) => (
             <div
               className="coin-info border-b-[0.05rem] flex justify-between bg-white mb-0.5 p-5"
@@ -20,7 +22,6 @@ const Coins = () => {
               <img className=" h-8 w-8 mr-1" alt={coin.name} src={coin.image} />
               <div className="coin-name ">
                 <h3 className="font-bold">{coin.name}</h3>
-
                 <p className="text-sm text-slate-600">
                   Mkt.cap ${coin.market_cap.toLocaleString()}
                 </p>
