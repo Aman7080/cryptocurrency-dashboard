@@ -100,13 +100,13 @@ const Select = ({
 };
 
 function Dropdown() {
-  const [options, setOption] = useState(['op1','op2','te1']);
-  const [coins, setCoins]=useState([]);
+  // const [options, setOption] = useState(['op1','op2','te1']);
+  // const [coins, setCoins]=useState([]);
 
   return (
       <div class="relative py-3 sm:max-w-xl sm:mx-auto">
         <div className="w-48">
-          <Multiselect
+          {/* <Multiselect
             isObject={false}
             options={ cryptocoins.map((crypto)=> crypto.name)  }
             onRemove={(event)=>{console.log(event)}}
@@ -114,7 +114,7 @@ function Dropdown() {
 
             showCheckbox
 
-          />
+          /> */}
           <Select options={cryptocoins.map((crypto)=> crypto.name) } />
         </div>
       </div>
