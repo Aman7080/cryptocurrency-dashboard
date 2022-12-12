@@ -1,7 +1,6 @@
 import { BsFillCaretDownFill } from "react-icons/bs";
 // import { cryptocoins } from "../Data/cryptocoins";
 import Dropdown from "./Dropdown";
-import Multiselect from "multiselect-react-dropdown";
 
 const CartNavbar = () => {
   return (

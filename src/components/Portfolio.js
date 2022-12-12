@@ -1,5 +1,4 @@
 import { Pie } from "react-chartjs-2";
-import { Chart as chartjs } from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { useSelector } from "react-redux";
 
