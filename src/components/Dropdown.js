@@ -1,7 +1,5 @@
 import Select from "multiselect-react-dropdown";
 import { cryptocoins } from "../Data/cryptocoins";
-// import { BsFillCaretDownFill } from "react-icons/bs";
-
 function Dropdown() {
   return (
       <div>
@@ -12,13 +10,10 @@ function Dropdown() {
           onSelect={(event) => { console.log(event) }}
           showCheckbox
           closeOnSelect
-          // hidePlaceholder 
           placeholder="Cryptocurrency"
           showArrow
-          selectionLimit={2}
+          selectionLimit={3}
           className="bg-slate-50 text-lg "
-          
-          // myFontSize="100px"
         />
       </div>
   );
