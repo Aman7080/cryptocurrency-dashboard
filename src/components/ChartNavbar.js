@@ -32,13 +32,12 @@ const CartNavbar = ({chartType, chartTypeHandler}) => {
         </div>
         <div className="relative my-2 ">
           <select
-            // defaultValue="chart"
             onChange={changeGraphHandler}
             className=" bg-slate-50 max-sm:w-40 h-12 rounded border appearance-none py-2 focus:outline-none focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
           >
-            <option value="chart" selected={false}>Chart type</option>
-            <option value="barHorizontal" selected={false}>Bar Chart Horizantal</option>
+            <option value="none" selected disabled hidden>Chart Type</option>
             <option value="line" selected={chartType === 'line'}>Line Chart</option>
+            <option value="barHorizontal" selected={chartType ==='barHorizontal'}>Bar Chart Horizantal</option>
             <option value="barVertical" selected={chartType === 'barVertical'}>Bar Chart Vertical</option>
           </select>
           <span className="absolute right-0 top-0 h-full w-10 text-center text-black font-black pointer-events-none flex items-center justify-center">
