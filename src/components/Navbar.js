@@ -22,7 +22,7 @@ export default function Navbar() {
     },0)
   }
 
-  console.log('inputvalue is',inputValue);
+  // console.log('inputvalue is',inputValue);
   useEffect(() => {
     if (inputValue) {
       let searchText = inputValue.toLowerCase()

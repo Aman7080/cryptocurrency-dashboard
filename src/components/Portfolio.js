@@ -1,7 +1,7 @@
 import { Pie } from "react-chartjs-2";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { useSelector } from "react-redux";
-import { Chart as chartjs } from "chart.js/auto";
+import { Chart as chartjs } from "chart.js/auto"; //don't delete this line
 function PortfolioContainer() {
   // Coins available in porfolio
   const cryptoInPortfolio = useSelector((state) => state.cryptoPortfolio);

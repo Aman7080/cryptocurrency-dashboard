@@ -1,8 +1,12 @@
 import CartNavbar from "./ChartNavbar";
-import { Line } from "react-chartjs-2";
+import { Bar, Line, } from "react-chartjs-2";
 import { ethereumPrice, stakedEtherPrice } from "../Data/cryptoPrice";
+import React, { useCallback } from "react";
+import { useState } from "react";
 
 export default function ChartCointainer() {
+  const [chartType, setChartype] = useState ("line")
+
   const randColor = () => {
     return (
       "#" +
@@ -12,6 +16,11 @@ export default function ChartCointainer() {
         .toUpperCase()
     );
   };
+
+  const chartTypeHandler = useCallback((chartName) => {
+    setChartype(chartName)
+  },[])
+  // console.log("color is", randColor())
   // data for chart
   const userData = {
     labels: ethereumPrice[0].prices.map((time) =>
@@ -34,6 +43,7 @@ export default function ChartCointainer() {
   };
   // option for removing x axis grid line
   const options = {
+    // indexAxis: 'y', ====> for Horizontal bar 
     plugins: {
       legend: {
         align: "end",
@@ -51,9 +61,10 @@ export default function ChartCointainer() {
 
   return (
     <>
-      <CartNavbar />
+      <CartNavbar chartType={chartType} chartTypeHandler={chartTypeHandler}/>
       <div className=" bg-white shadow-lg hover:duration-300 hover:shadow-2xl rounded-md px-10 pb-10">
-        <Line data={userData} options={options} />
+        {chartType === "barVertical" && <Bar data={userData} options={options} />}
+        {chartType === "line" && <Line data={userData} options={options} />}
       </div>
     </>
   );
