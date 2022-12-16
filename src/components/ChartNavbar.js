@@ -35,7 +35,7 @@ const CartNavbar = ({chartType, chartTypeHandler}) => {
             onChange={changeGraphHandler}
             className=" bg-slate-50 max-sm:w-40 h-12 rounded border appearance-none py-2 focus:outline-none focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
           >
-            <option value="none" selected disabled hidden>Chart Type</option>
+            <option selected disabled hidden>Chart Type</option>
             <option value="line" selected={chartType === 'line'}>Line Chart</option>
             <option value="barHorizontal" selected={chartType ==='barHorizontal'}>Bar Chart Horizantal</option>
             <option value="barVertical" selected={chartType === 'barVertical'}>Bar Chart Vertical</option>
