@@ -64,7 +64,7 @@ function PortfolioContainer() {
           <h3 className=" font-bold text-xl ">Portfolio</h3>
         </div>
         <div className="flex flex-col text-xl items-center md:flex-row ">
-          <p className=" text-slate-400 ">Total Value </p>
+          <p className=" text-slate-400 ">Total Value {" "}</p>
           <p className=" text-black font-semibold">{totalValue}</p>
         </div>
       </div>
