@@ -20,9 +20,9 @@ function App() {
             </div>
           </div>
         </div>
-        {/* <div className=" mx-5 bg-slate-50 ">
+        <div className=" mx-5 bg-slate-50 ">
           <Coins />
-        </div> */}
+        </div>
       </div>
     </>
   );

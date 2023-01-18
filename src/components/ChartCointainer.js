@@ -6,14 +6,14 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 
 export default function ChartCointainer() {
+
   const [timing, setTiming] = useState([]);
   const [interval, setInterval] = useState("hourly");
   const [chartType, setChartype] = useState("line");
   const currency = useSelector((state) => state.defaultCurrency)[0];
   const days = useSelector((state) => state.defaultDays)[0];
-
   const coinInState = useSelector((state) => state.selectCoin);
-  const graphDataset = [];
+  const [graphDataset, setGraphDataset] = useState([]);
 
   useEffect(() => {
     if (days < 5) {
@@ -32,19 +32,27 @@ export default function ChartCointainer() {
         .get(url)
         .then((res) => {
           setTiming(res.data.prices);
-          console.log(res.data.prices);
-          console.log(crypto);
-          graphDataset.push({
+          let temp = {
             label: crypto,
             data: res.data.prices.map((price) => price[1]),
             borderColor: randColor(),
             backgroundColor: randColor(),
             pointRadius: "0",
-          });
+          };
+
+          if (graphDataset.length == 0) {
+            setGraphDataset([temp]);
+          } else if (
+            graphDataset.filter((temp) => temp.label == crypto).length < 1
+          ) {
+            console.log("push");
+            setGraphDataset((prevState) => [...prevState, temp]);
+          }
         })
         .catch((err) => console.log(err));
     });
   }, [interval, coinInState, currency, days]);
+
   // creating random color for chart lines
   const randColor = () => {
     return (
@@ -55,17 +63,15 @@ export default function ChartCointainer() {
         .toUpperCase()
     );
   };
-  console.log("gr = ", graphDataset);
+  console.log(graphDataset);
   const chartTypeHandler = useCallback((chartName) => {
     setChartype(chartName);
   }, []);
 
   // data for chart
   const userData = {
-
     labels: timing.map((time) => new Date(time[0]).toDateString()),
     datasets: graphDataset,
-
   };
   // option for removing x axis grid line
   const options = {
