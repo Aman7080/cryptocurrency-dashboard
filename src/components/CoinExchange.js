@@ -15,7 +15,7 @@ function CoinExchange() {
 
   const handleBuy = () => {
     // color for pie chart
-  
+    console.log('handlebuy')
     const randColor = () => {
       return (
         "#" +
@@ -32,8 +32,9 @@ function CoinExchange() {
     setCoin("bitcoin");
   };
   const cryptoInPortfolio = useSelector((state) => state.cryptoPortfolio);
+  //console.log(cryptoInPortfolio[0])
   const handleSell = () => {
-
+    console.log("handlesell")
     if (cryptoInPortfolio.find((crypto) => crypto.name === coin)) {
       dispatch(sellcoin({ name: coin, value: sellValue }));
     } else {
@@ -63,12 +64,9 @@ function CoinExchange() {
               }}
               className=" bg-slate-50 rounded border appearance-none py-2 text-gray-600 focus:outline-none focus:border-indigo-500 font-medium text-base pl-5 pr-14"
             >
-              <option value="bitcoin">Bitcoin</option>
-              <option value="polygon">Polygon</option>
-              <option value="ethereum">Ethereum</option>
-              <option value="tron">Tron</option>
-              <option value="luna">Luna</option>
-              <option value="tether">Tether</option>
+              {cryptoInPortfolio.map((crypto,index)=>(
+                <option value={crypto.name} key={index}>{crypto.name.charAt(0).toUpperCase()+crypto.name.slice(1)}</option>
+              ))}
             </select>
             <span className="absolute right-0 top-0 h-full w-10 text-center text-black pointer-events-none flex items-center justify-center">
               <BsFillCaretDownFill />
@@ -77,8 +75,7 @@ function CoinExchange() {
           <div>
             <input
               type="text"
-              //placeholder="Avl:0.002BTC"
-              value={sellValue}
+              defaultValue={'Avl ' + cryptoInPortfolio[0].value}
               onChange={(e) => setSellValue(e.target.value)}
               className="w-full bg-gray-100 bg-opacity-50 rounded border-2 border-gray-300 focus:border-orange-500 text-base outline-none text-black py-1 px-3 leading-8"
             />
@@ -129,63 +126,6 @@ function CoinExchange() {
           </button>
         </div>
       </div>
-
-      {/* <ul className="flex text-lg font-medium text-center text-gray-500 justify-center mt-4 ">
-        <li>
-          <button
-            onClick={() => setExchangeType("buy")}
-            style={{ backgroundColor: exchangeType === "buy" && "#e2e8f0 " }}
-            className="inline-block px-6 py-2 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 active:text-blue-500"
-          >
-            Buy
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => setExchangeType("sell")}
-            style={{ backgroundColor: exchangeType === "sell" && "#e2e8f0" }}
-            className="inline-block px-6 py-2 rounded-t-lg  hover:text-gray-600 hover:bg-gray-50 active:text-blue-500"
-          >
-            Sell
-          </button>
-        </li>
-      </ul>
-      <div className="border bg-slate-200 rounded-lg">
-        <div className="flex flex-col justify-center items-center mt-6 ">
-          <div className="relative">
-            <select
-              value={coin}
-              onChange={(e) => setCoin(e.target.value)}
-              className=" bg-slate-50 rounded border appearance-none py-3 text-gray-600 focus:outline-none focus:border-indigo-500 font-medium  text-lg pl-6 pr-20"
-            >
-              <option value="bitcoin">Bitcoin</option>
-              <option value="polygon">Polygon</option>
-              <option value="ethereum">Ethereum</option>
-              <option value="tron">Tron</option>
-            </select>
-            <span className="absolute h-full w-10 text-center text-black right-0 top-4 ">
-              <BsFillCaretDownFill />
-            </span>
-          </div>
-          <div>
-            <input
-              type="text"
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
-              className="w-52 mt-6  bg-opacity-50 rounded border-2 border-gray-300 focus:border-indigo-500 text-lg outline-none text-black py-3 px-4 leading-8"
-            />
-          </div>
-        </div>
-        <div className="flex justify-center my-5">
-          <button
-            disabled={!(value > 0)}
-            onClick={exchangeType === "buy" ? handleBuy : handleSell}
-            className="bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-white hover:border-2 hover:border-sky-600/100 hover:duration-300 hover:text-sky-600 border-2 border-white disabled:opacity-70"
-          >
-            {exchangeType.toUpperCase()}
-          </button>
-        </div>
-      </div> */}
     </div>
   );
 }

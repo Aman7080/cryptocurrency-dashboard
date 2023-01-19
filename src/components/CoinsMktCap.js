@@ -1,19 +1,36 @@
 import { RiArrowDownSFill, RiArrowUpSFill } from "react-icons/ri";
-import { mktCap } from "../Data/MktCap";
+// import { mktCap } from "../Data/MktCap";
+import axios from "axios";
+import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
 
 const Coins = () => {
+  const [data, setData] = useState([]);
+  const currency = useSelector((state) => state.defaultCurrency)[0];
+  const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=11&page=1&sparkline=false`;
+
+  useEffect(() => {
+    axios
+      .get(url)
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {
+        // handle error
+        console.log(error);
+      });
+  }, [currency]);
   return (
     <>
       <div className="m-5 h-max shadow-lg hover:duration-300 hover:shadow-2xl rounded-lg bg-white">
-        {/* <div className=" "> */}
-          <div className=" p-5 rounded-xl  bg-white">
-            <h2 className="text-xl font-black font-comfortaa">
-              Cryptocurrency by market cap
-            </h2>
-          </div>
-        {/* </div> */}
+        <div className=" p-5 rounded-xl  bg-white">
+          <h2 className="text-xl font-black font-comfortaa">
+            Cryptocurrency by market cap
+          </h2>
+        </div>
+
         <div className="coins  m-6 rounded-xl  overflow-y-auto max-h-screen scroll-smooth scrollbar-hide">
-          {mktCap.map((coin) => (
+          {data.map((coin) => (
             <div
               className="coin-info border-b-[0.05rem] flex justify-between bg-white mb-0.5 p-5"
               key={coin.id}
@@ -23,7 +40,8 @@ const Coins = () => {
               <div className="coin-name ">
                 <h3 className="font-bold">{coin.name}</h3>
                 <p className="text-sm text-slate-600">
-                  Mkt.cap ${coin.market_cap.toLocaleString()}
+                  Mkt.cap {currency === "usd" ? <>&#36;</> : <>&#8377;</>}
+                  {coin.market_cap.toLocaleString()}
                 </p>
               </div>
               {coin.price_change_24h < 0 ? (

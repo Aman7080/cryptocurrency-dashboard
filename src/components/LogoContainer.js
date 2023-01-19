@@ -1,5 +1,3 @@
-import React from "react";
-
 function LogoContainer() {
   return (
     <div className=" shadow-md border ">
