@@ -1,13 +1,13 @@
 import { BsFillCaretDownFill } from "react-icons/bs";
 import Select from "multiselect-react-dropdown";
-import { cryptocoins } from "../Data/cryptocoins";
+// import { cryptocoins } from "../Data/cryptocoins";
 import { useDispatch } from "react-redux";
 import { updateDays } from "../state/features/days";
 import { selectCoin, removecoin } from "../state/features/coinSelection";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const CartNavbar = ({ chartTypeHandler }) => {
+const ChartNavbar = ({ chartTypeHandler }) => {
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
   const url =
