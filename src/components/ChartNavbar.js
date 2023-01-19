@@ -120,4 +120,4 @@ const CartNavbar = ({ chartTypeHandler }) => {
   );
 };
 
-export default CartNavbar;
+export default ChartNavbar;
