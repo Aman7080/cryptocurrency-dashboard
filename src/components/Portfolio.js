@@ -58,7 +58,7 @@ function PortfolioContainer() {
   };
 
   return (
-    <div className="container shadow-lg hover:duration-300 hover:shadow-2xl bg-white mt-4 font-['Poppins'] rounded-xl p-5 w-full ">
+    <div className="dark:bg-slate-900 container shadow-lg hover:duration-300 hover:shadow-2xl bg-white mt-4 font-['Poppins'] rounded-xl p-5 w-full ">
       <div className="flex flex-col md:flex-row items-center md:m-2 justify-between flex-1">
         <div>
           <h3 className=" font-bold text-xl ">Portfolio</h3>

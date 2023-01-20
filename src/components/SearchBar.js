@@ -6,7 +6,7 @@ const SearchBar = ({ inputValue, setInputValue }) => {
     }
     return (
         <>
-            <div className="w-full flex ml-3 hover:duration-300 hover:shadow-xl shadow-md flex-1 items-center rounded-lg bg-white h-14">
+            <div className="w-full dark:bg-slate-900 flex ml-3 hover:duration-300 hover:shadow-xl shadow-md flex-1 items-center rounded-lg bg-white h-14">
                 <div className=" ml-8 mr-5 text-3xl text-slate-500 ">
                     <FiSearch />
                 </div>

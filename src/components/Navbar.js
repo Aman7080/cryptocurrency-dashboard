@@ -36,7 +36,7 @@ export default function Navbar() {
   }, [inputValue]);
   return (
     <>
-      <div className="w-full max-sm:w-full  font-['Poppins'] flex justify-between my-4">
+      <div className="w-full dark:bg-slate-900 max-sm:w-full  font-['Poppins'] flex justify-between my-4">
         <div className="relative">
           <select
             value={currency}

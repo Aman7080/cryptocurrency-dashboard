@@ -22,7 +22,7 @@ const Coins = () => {
   }, [currency]);
   return (
     <>
-      <div className="m-5 h-max shadow-lg hover:duration-300 hover:shadow-2xl rounded-lg bg-white">
+      <div className="m-5 dark:bg-slate-900 h-max shadow-lg hover:duration-300 hover:shadow-2xl rounded-lg bg-white">
         <div className=" p-5 rounded-xl  bg-white">
           <h2 className="text-xl font-black font-comfortaa">
             Cryptocurrency by market cap
