@@ -11,7 +11,7 @@ const SearchBar = ({ inputValue, setInputValue }) => {
                     <FiSearch />
                 </div>
                 <input
-                    className=" h-11 w-full border-0 bg-transparent rounded-xl outline-0 pl-2 dark:text-cyan-400 text-slate-600 focus:outline-none"
+                    className=" h-11 w-full border-0 bg-transparent rounded-xl outline-0 pl-2 dark:text-cyan-400 dark:bg-stone-700 text-slate-600 focus:outline-none"
                     placeholder="Search by Coin"
                     onChange={searchHandler}
                     value={inputValue}

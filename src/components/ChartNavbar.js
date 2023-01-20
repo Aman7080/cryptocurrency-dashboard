@@ -83,7 +83,7 @@ const ChartNavbar = ({ chartTypeHandler }) => {
         <select
           defaultValue="none"
           onChange={(e) => chartTypeHandler(e.target.value)}
-          className=" bg-slate-50 max-sm:w-40 h-12 rounded border appearance-none py-2 focus:outline-none focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
+          className=" bg-slate-50 max-sm:w-40 h-12 rounded border appearance-none py-2 focus:outline-none focus:border-indigo-500 dark:bg-stone-700 text-lg dark:text-cyan-400 text-gray-600 text-bold pl-5 pr-14"
         >
           <option value="none" disabled hidden>
             Chart Type

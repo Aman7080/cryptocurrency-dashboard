@@ -22,14 +22,14 @@ const Coins = () => {
   }, [currency]);
   return (
     <>
-      <div className="m-5 dark:bg-stone-800 h-max shadow-lg hover:duration-300 hover:shadow-2xl rounded-lg bg-white">
+      <div className="m-5 dark:bg-stone-800 dark:border-0 dark:border-cyan-400 h-max shadow-lg hover:duration-300 hover:shadow-2xl rounded-lg bg-white">
         <div className=" p-5 rounded-xl dark:bg-stone-800  bg-white">
           <h2 className="text-xl dark:text-cyan-400 dark:bg-stone-800 font-black font-comfortaa">
             Cryptocurrency by market cap
           </h2>
         </div>
 
-        <div className="coins   m-6 rounded-xl  overflow-y-auto max-h-screen scroll-smooth scrollbar-hide">
+        <div className="coins  m-6 rounded-xl  overflow-y-auto max-h-screen scroll-smooth scrollbar-hide">
           {data.map((coin) => (
             <div
               className="coin-info dark:bg-stone-800 border-b-[0.05rem] flex justify-between  bg-white mb-0.5 p-5"

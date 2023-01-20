@@ -54,12 +54,13 @@ export default function Navbar() {
       </div>
       {searchData.length > 0 && inputValue && (
         <div
-          className=" bg-white border absolute"
+          className=" bg-white dark:text-cyan-400 rounded-xl font-medium text-xl dark:bg-stone-700 border dark:border-black absolute"
           style={{
-            width: "55%",
-            marginLeft: "126px",
+            width: "43%",
+            marginLeft: "196px",
             zIndex: 1,
             marginTop: "-1rem",
+            
           }}
         >
           {searchData.map((crypto, index) => {
