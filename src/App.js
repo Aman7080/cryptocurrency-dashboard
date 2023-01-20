@@ -50,7 +50,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className=" mx-5 bg-slate-50  dark:bg-slate-900">
+        <div className=" mx-5 bg-slate-50  dark:bg-stone-900">
           <button  onClick={handleThemeSwitch} className="bg-green-200 font-poppins font-medium p-4 justify-around inline-flex rounded-3xl">
             <span className="mt-1 mr-2 font-bold"><FaMoon/></span>Dark Mod
           </button>
