@@ -39,7 +39,7 @@ function App() {
     
     < >
       <LogoContainer />
-      <div className="flex dark:bg-black flex-col items-center md:items-start md:flex-row justify-center m-10 ">
+      <div className="flex dark:bg-stone-900 flex-col items-center md:items-start md:flex-row justify-center m-10 ">
         <div className="container max-w-screen-lg">
           <div>
             <Navbar />

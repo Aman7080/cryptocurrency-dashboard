@@ -1,6 +1,6 @@
 function LogoContainer() {
   return (
-    <div className="dark:bg-slate-900 shadow-md border ">
+    <div className="dark:bg-stone-900 shadow-md border ">
       <img
         className=" h-8 my-5 mx-auto md:mx-20"
         src="/logo.png"

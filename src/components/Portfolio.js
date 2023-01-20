@@ -58,14 +58,14 @@ function PortfolioContainer() {
   };
 
   return (
-    <div className="dark:bg-slate-900 container shadow-lg hover:duration-300 hover:shadow-2xl bg-white mt-4 font-['Poppins'] rounded-xl p-5 w-full ">
+    <div className="dark:bg-stone-800 dark:border-cyan-400 dark:border-2 dark:shadow-black  container shadow-lg hover:duration-300 hover:shadow-2xl bg-white mt-4 font-['Poppins'] rounded-xl p-5 w-full ">
       <div className="flex flex-col md:flex-row items-center md:m-2 justify-between flex-1">
         <div>
-          <h3 className=" font-bold text-xl ">Portfolio</h3>
+          <h3 className="dark:text-cyan-400 font-bold text-xl ">Portfolio</h3>
         </div>
         <div className="flex flex-col text-xl items-center md:flex-row ">
-          <p className=" text-slate-400 ">Total Value {" "}</p>
-          <p className=" text-black font-semibold">{totalValue}</p>
+          <p className=" text-slate-400 dark:text-cyan-400 ">Total Value {" "}</p>
+          <p className=" text-black dark:text-white font-semibold">{totalValue}</p>
         </div>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-evenly">
