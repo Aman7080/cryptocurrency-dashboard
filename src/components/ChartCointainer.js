@@ -43,10 +43,10 @@ export default function ChartCointainer() {
             pointRadius: "0",
           };
 
-          if (graphDataset.length == 0) {
+          if (graphDataset.length === 0) {
             setGraphDataset([temp]);
           } else if (
-            graphDataset.filter((temp) => temp.label == crypto).length < 1
+            graphDataset.filter((temp) => temp.label === crypto).length < 1
           ) {
             console.log("push");
             setGraphDataset((prevState) => [...prevState, temp]);
