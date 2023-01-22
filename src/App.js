@@ -10,7 +10,7 @@ function App() {
   // class Question extends React.Component {
   return (
     
-    < >
+    <div className="dark:bg-stone-900">
       <LogoContainer />
       <div className="flex dark:bg-stone-900 flex-col items-center md:items-start md:flex-row justify-center m-10 ">
         <div className="container max-w-screen-lg">
@@ -28,7 +28,7 @@ function App() {
           <Coins />
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
