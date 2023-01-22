@@ -1,6 +1,12 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
 /* body{
-  background-color:  rgb(248 250 252); 
-  dark: black;
+  padding-bottom: 0rem;
+  margin-bottom: 3rem;
 } */
 
 .App {

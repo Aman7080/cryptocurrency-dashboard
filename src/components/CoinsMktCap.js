@@ -22,9 +22,9 @@ const Coins = () => {
   }, [currency]);
   return (
     <>
-      <div className="m-5 dark:bg-slate-900 h-max shadow-lg hover:duration-300 hover:shadow-2xl rounded-lg bg-white">
-        <div className=" p-5 rounded-xl  bg-white">
-          <h2 className="text-xl font-black font-comfortaa">
+      <div className="m-5 dark:bg-stone-800 dark:border-0 dark:border-cyan-400 h-max shadow-lg hover:duration-300 hover:shadow-2xl rounded-lg bg-white">
+        <div className=" p-5 rounded-xl dark:bg-stone-800  bg-white">
+          <h2 className="text-xl dark:text-cyan-400 dark:bg-stone-800 font-black font-comfortaa">
             Cryptocurrency by market cap
           </h2>
         </div>
@@ -32,20 +32,20 @@ const Coins = () => {
         <div className="coins  m-6 rounded-xl  overflow-y-auto max-h-screen scroll-smooth scrollbar-hide">
           {data.map((coin) => (
             <div
-              className="coin-info border-b-[0.05rem] flex justify-between bg-white mb-0.5 p-5"
+              className="coin-info dark:bg-stone-800 border-b-[0.05rem] flex justify-between  bg-white mb-0.5 p-5"
               key={coin.id}
             >
               {" "}
               <img className=" h-8 w-8 mr-1" alt={coin.name} src={coin.image} />
               <div className="coin-name ">
-                <h3 className="font-bold">{coin.name}</h3>
-                <p className="text-sm text-slate-600">
+                <h3 className="font-bold dark:text-white">{coin.name}</h3>
+                <p className="text-sm dark:text-cyan-400 text-slate-600">
                   Mkt.cap {currency === "usd" ? <>&#36;</> : <>&#8377;</>}
                   {coin.market_cap.toLocaleString()}
                 </p>
               </div>
               {coin.price_change_24h < 0 ? (
-                <div className="coin-rate flex bg-white items-center">
+                <div className="coin-rate flex bg-white dark:bg-stone-800 items-center">
                   <p>
                     <RiArrowDownSFill size="2rem" color="red" />
                   </p>
@@ -54,7 +54,7 @@ const Coins = () => {
                   </h4>
                 </div>
               ) : (
-                <div className="coin-rate flex bg-white items-center">
+                <div className="coin-rate flex dark:bg-stone-800 bg-white items-center">
                   <p>
                     <RiArrowUpSFill size="2rem" color="green" />
                   </p>

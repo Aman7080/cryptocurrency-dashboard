@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { buycoin, sellcoin } from "../state/features/exchangeCoin";
 
 function CoinExchange() {
- 
   const [exchangeType, setExchangeType] = useState("buy");
   const [buyValue, setBuyValue] = useState(0);
   const [sellValue, setSellValue] = useState(0);
@@ -15,7 +14,7 @@ function CoinExchange() {
 
   const handleBuy = () => {
     // color for pie chart
-    console.log('handlebuy')
+    console.log("handlebuy");
     const randColor = () => {
       return (
         "#" +
@@ -34,7 +33,7 @@ function CoinExchange() {
   const cryptoInPortfolio = useSelector((state) => state.cryptoPortfolio);
   //console.log(cryptoInPortfolio[0])
   const handleSell = () => {
-    console.log("handlesell")
+    console.log("handlesell");
     if (cryptoInPortfolio.find((crypto) => crypto.name === coin)) {
       dispatch(sellcoin({ name: coin, value: sellValue }));
     } else {
@@ -46,10 +45,12 @@ function CoinExchange() {
   };
 
   return (
-    <div className="mt-4 dark:bg-slate-900 hover:duration-300 hover:shadow-2xl bg-white shadow-lg font-[Poppins] rounded-xl p-5 w-full">
+    <div className="mt-4 dark:bg-stone-800 dark:border-cyan-400 dark:border-0 dark:shadow-black hover:duration-300 hover:shadow-2xl bg-white shadow-lg font-[Poppins] rounded-xl p-5 w-full">
       <div className="flex flex-col md:flex-row items-center justify-between">
         <div>
-          <h3 className=" font-bold mt-2 text-xl ">Exchange Coins</h3>
+          <h3 className=" font-bold dark:text-cyan-400 mt-2 text-xl ">
+            Exchange Coins
+          </h3>
         </div>
       </div>
       <div className="flex flex-col ">
@@ -62,22 +63,24 @@ function CoinExchange() {
                 setCoin(e.target.value);
                 setExchangeType("sell");
               }}
-              className=" bg-slate-50 rounded border appearance-none py-2 text-gray-600 focus:outline-none focus:border-indigo-500 font-medium text-base pl-5 pr-14"
+              className=" bg-slate-50 rounded border appearance-none py-2 dark:bg-stone-700 dark:text-white dark:border-none text-gray-600 focus:outline-none focus:border-cyan-400 font-medium text-base pl-5 pr-14"
             >
-              {cryptoInPortfolio.map((crypto,index)=>(
-                <option value={crypto.name} key={index}>{crypto.name.charAt(0).toUpperCase()+crypto.name.slice(1)}</option>
+              {cryptoInPortfolio.map((crypto, index) => (
+                <option value={crypto.name} key={index}>
+                  {crypto.name.charAt(0).toUpperCase() + crypto.name.slice(1)}
+                </option>
               ))}
             </select>
-            <span className="absolute right-0 top-0 h-full w-10 text-center text-black pointer-events-none flex items-center justify-center">
+            <span className="absolute right-0 top-0 h-full w-10 text-center dark:bg-stone-700 dark:text-white text-black pointer-events-none flex items-center justify-center">
               <BsFillCaretDownFill />
             </span>
           </div>
           <div>
             <input
               type="text"
-              defaultValue={'Avl ' + cryptoInPortfolio[0].value}
+              defaultValue={"Avl " + cryptoInPortfolio[0].value}
               onChange={(e) => setSellValue(e.target.value)}
-              className="w-full bg-gray-100 bg-opacity-50 rounded border-2 border-gray-300 focus:border-orange-500 text-base outline-none text-black py-1 px-3 leading-8"
+              className="w-full bg-gray-100 bg-opacity-50 rounded border-2 dark:bg-stone-700 text-medium dark:text-orange-500 dark:border-none border-gray-300 focus:border-orange-500 text-base outline-none text-black py-1 px-3 leading-8"
             />
           </div>
         </div>
@@ -90,7 +93,7 @@ function CoinExchange() {
                 setCoin(e.target.value);
                 setExchangeType("buy");
               }}
-              className=" bg-slate-50 rounded border appearance-none py-2 focus:outline-none font-medium focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
+              className=" bg-slate-50 rounded border appearance-none py-2 dark:bg-stone-700 dark:text-white dark:border-none focus:outline-none font-medium focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
             >
               <option value="bitcoin">Bitcoin</option>
               <option value="polygon">Polygon</option>
@@ -99,7 +102,7 @@ function CoinExchange() {
               <option value="luna">Luna</option>
               <option value="tether">Tether</option>
             </select>
-            <span className="absolute right-0 top-0 h-full w-10 text-center text-black font-black pointer-events-none flex items-center justify-center">
+            <span className="absolute right-0 top-0 h-full w-10 dark:bg-stone-700 dark:text-white text-center text-black font-black pointer-events-none flex items-center justify-center">
               <BsFillCaretDownFill />
             </span>
           </div>
@@ -107,7 +110,7 @@ function CoinExchange() {
             <input
               type="number"
               //placeholder="Avl:0.002BTC"
-              className="w-full rounded text-base outline-none text-green-600 py-1 px-3 leading-8"
+              className="w-full rounded text-base dark:bg-stone-800 dark:text-green-700 decoration-none outline-none text-green-600 py-1 px-3 leading-8"
               // disabled
               value={buyValue}
               onChange={(e) => setBuyValue(e.target.value)}
@@ -120,7 +123,7 @@ function CoinExchange() {
               exchangeType === "buy" ? !(buyValue > 0) : !(sellValue > 0)
             }
             onClick={exchangeType === "buy" ? handleBuy : handleSell}
-            className="bg-blue-600 text-white py-2 px-3 rounded-md hover:bg-white hover:border-2 hover:border-sky-600/100 hover:duration-300 hover:text-sky-600 border-2 border-white disabled:opacity-70"
+            className="bg-blue-600 text-white py-3 dark:bg-cyan-400 font-medium dark:text-black dark:hover:text-white dark:border-stone-900 dark:hover:bg-stone-900 px-10 rounded-md hover:bg-white hover:border-2 hover:border-sky-600/100 hover:duration-300 hover:text-sky-600 border-2 border-white disabled:opacity-100"
           >
             Exchange
           </button>

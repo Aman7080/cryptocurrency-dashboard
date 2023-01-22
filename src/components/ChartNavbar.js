@@ -28,41 +28,41 @@ const ChartNavbar = ({ chartTypeHandler }) => {
   }, []);
 
   return (
-    <div className="container dark:bg-slate-900 max-sm:m-1 shadow-lg hover:shadow-2xl flex flex-col md:flex-row justify-center md:justify-around items-center bg-white space-y-4 md:space-y-0 p-5">
+    <div className="container dark:bg-stone-900 dark:border-none   max-sm:m-1 shadow-lg hover:shadow-2xl flex flex-col md:flex-row justify-center md:justify-around items-center bg-white space-y-4 md:space-y-0 p-5">
       <div className="flex max-sm:w-52">
         <button
           onClick={() => dispatch(updateDays(1))}
-          className="w-12 h-8 font-semibold rounded-md mx-1 bg-slate-100 text-slate-500 hover:border-2 hover:border-blue-500 hover:text-blue-500"
+          className="w-12 h-8 font-semibold rounded-md mx-1 bg-slate-100 dark:text-white dark:bg-stone-800 text-slate-500 hover:border-2 hover:border-blue-500 hover:text-blue-500"
         >
           1D
         </button>
         <button
           onClick={() => dispatch(updateDays(7))}
-          className="w-12 h-8 font-semibold rounded-md mx-1 bg-slate-100 text-slate-500 hover:border-2  hover:border-blue-500 hover:text-blue-500"
+          className="w-12 h-8 font-semibold rounded-md mx-1 bg-slate-100  dark:text-white dark:bg-stone-800 text-slate-500 hover:border-2  hover:border-blue-500 hover:text-blue-500"
         >
           1W
         </button>
         <button
           onClick={() => dispatch(updateDays(30))}
-          className="w-12 h-8 font-semibold rounded-md mx-1 bg-slate-100 text-slate-500 hover:border-2  hover:border-blue-500 hover:text-blue-500"
+          className="w-12 h-8 font-semibold rounded-md mx-1 bg-slate-100  dark:text-white dark:bg-stone-800 text-slate-500 hover:border-2  hover:border-blue-500 hover:text-blue-500"
         >
           1M
         </button>
         <button
           onClick={() => dispatch(updateDays(180))}
-          className="w-12 h-8 font-semibold rounded-md mx-1 bg-slate-100 text-slate-500 hover:border-2  hover:border-blue-500 hover:text-blue-500"
+          className="w-12 h-8 font-semibold rounded-md mx-1 bg-slate-100 text-slate-500 hover:border-2  hover:border-blue-500  dark:text-white dark:bg-stone-800 hover:text-blue-500"
         >
           6M
         </button>
         <button
           onClick={() => dispatch(updateDays(365))}
-          className="w-12 h-8 font-semibold rounded-md mx-1 bg-slate-100 text-slate-500 hover:border-2  hover:border-blue-500 hover:text-blue-500"
+          className="w-12 h-8 font-semibold rounded-md mx-1 bg-slate-100 text-slate-500 hover:border-2  hover:border-blue-500  dark:text-white dark:bg-stone-800 hover:text-blue-500"
         >
           1Y
         </button>
       </div>
 
-      <div>
+      <div className="">
         <Select
           selectedValues={selectedValues}
           options={data.map((crypto) => crypto.id)}
@@ -85,7 +85,7 @@ const ChartNavbar = ({ chartTypeHandler }) => {
           placeholder="Cryptocurrency"
           showArrow
           selectionLimit={4}
-          className="bg-slate-50 text-lg "
+          className="bg-slate-50 dark:bg-stone-700 dark:border-2 font-poppins font-medium dark:decoration-none dark:ring-none dark:border-black text-lg dark:outline-black"
         />
       </div>
 
@@ -93,7 +93,7 @@ const ChartNavbar = ({ chartTypeHandler }) => {
         <select
           defaultValue="none"
           onChange={(e) => chartTypeHandler(e.target.value)}
-          className=" bg-slate-50 max-sm:w-40 h-12 rounded border appearance-none py-2 focus:outline-none focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
+          className=" bg-slate-50 max-sm:w-40 h-12 rounded border font-poppins font-medium appearance-none py-2 focus:outline-none focus:border-cyan-400 dark:bg-stone-700 text-lg dark:border-none dark:text-white text-gray-600 text-bold pl-5 pr-14"
         >
           <option value="none" disabled hidden>
             Chart Type
