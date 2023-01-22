@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 
 export default function ChartCointainer() {
-
   const [timing, setTiming] = useState([]);
   const [interval, setInterval] = useState("hourly");
   const [chartType, setChartype] = useState("line");
@@ -14,6 +13,10 @@ export default function ChartCointainer() {
   const days = useSelector((state) => state.defaultDays)[0];
   const coinInState = useSelector((state) => state.selectCoin);
   const [graphDataset, setGraphDataset] = useState([]);
+
+  // const [selecteValues, setSelectedValue] = useState(selectedData)
+
+  const selectedData = useSelector((state) => state?.selectCoin);
 
   useEffect(() => {
     if (days < 5) {
@@ -53,6 +56,10 @@ export default function ChartCointainer() {
     });
   }, [interval, coinInState, currency, days]);
 
+  useEffect(() => {
+    setGraphDataset(selectedData);
+  }, [selectedData]);
+
   // creating random color for chart lines
   const randColor = () => {
     return (
@@ -63,7 +70,7 @@ export default function ChartCointainer() {
         .toUpperCase()
     );
   };
-  console.log(graphDataset);
+  console.log("graph data sets", graphDataset);
   const chartTypeHandler = useCallback((chartName) => {
     setChartype(chartName);
   }, []);
@@ -107,6 +114,8 @@ export default function ChartCointainer() {
     },
   };
 
+  console.log("userdata is", userData);
+
   return (
     <>
       <ChartNavbar chartTypeHandler={chartTypeHandler} />
@@ -122,3 +131,4 @@ export default function ChartCointainer() {
     </>
   );
 }
+y;

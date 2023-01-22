@@ -1,7 +1,7 @@
 import { BsFillCaretDownFill } from "react-icons/bs";
 import Select from "multiselect-react-dropdown";
 // import { cryptocoins } from "../Data/cryptocoins";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateDays } from "../state/features/days";
 import { selectCoin, removecoin } from "../state/features/coinSelection";
 import axios from "axios";
@@ -9,7 +9,10 @@ import { useState, useEffect } from "react";
 
 const ChartNavbar = ({ chartTypeHandler }) => {
   const [data, setData] = useState([]);
+  const [selectedValues, setSelectedValues] = useState(["etherium"]);
   const dispatch = useDispatch();
+  const valuueee = useSelector((state) => state?.selectCoin);
+  console.log("valuee is", valuueee);
   const url =
     "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=40&page=1&sparkline=false";
   useEffect(() => {
@@ -61,13 +64,20 @@ const ChartNavbar = ({ chartTypeHandler }) => {
 
       <div>
         <Select
-         selectedValues = {['ethereum']}
+          selectedValues={selectedValues}
           options={data.map((crypto) => crypto.id)}
           isObject={false}
-          onRemove={(selectedList, removedItem) =>
-            dispatch(removecoin(removedItem))
-          }
+          onRemove={(event) => {
+            console.log("eeee", event);
+
+            dispatch(
+              event === [] || event?.length === 0
+                ? selectCoin(["ethereum"])
+                : selectCoin(event)
+            );
+          }}
           onSelect={(event) => {
+            console.log("adding ", event);
             dispatch(selectCoin(event));
           }}
           showCheckbox
