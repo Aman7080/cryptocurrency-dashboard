@@ -63,7 +63,7 @@ function CoinExchange() {
                 setCoin(e.target.value);
                 setExchangeType("sell");
               }}
-              className=" bg-slate-50 rounded border appearance-none py-2 dark:bg-stone-700 dark:text-white dark:border-none text-gray-600 focus:outline-none focus:border-cyan-400 font-medium text-base pl-5 pr-14"
+              className=" bg-slate-50 rounded border appearance-none py-2 dark:bg-stone-700 dark:text-white dark:border-none text-gray-600 focus:outline-none focus:border-cyan-400 font-medium text-base pl-3 md:pl-6  pr-8 md:pr-14"
             >
               {cryptoInPortfolio.map((crypto, index) => (
                 <option value={crypto.name} key={index}>
@@ -80,7 +80,7 @@ function CoinExchange() {
               type="text"
               defaultValue={"Avl " + cryptoInPortfolio[0].value}
               onChange={(e) => setSellValue(e.target.value)}
-              className="w-full bg-gray-100 bg-opacity-50 rounded border-2 dark:bg-stone-700 text-medium dark:text-orange-500 dark:border-none border-gray-300 focus:border-orange-500 text-base outline-none text-black py-1 px-3 leading-8"
+              className="w-full bg-gray-100 bg-opacity-50 rounded border-2 dark:bg-stone-700 text-medium dark:text-orange-500 dark:border-none border-gray-300 focus:border-orange-500 text-base outline-none text-black pl-1 md:py-1 mr-3 md:px-3 leading-8"
             />
           </div>
         </div>
@@ -93,7 +93,7 @@ function CoinExchange() {
                 setCoin(e.target.value);
                 setExchangeType("buy");
               }}
-              className=" bg-slate-50 rounded border appearance-none py-2 dark:bg-stone-700 dark:text-white dark:border-none focus:outline-none font-medium focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
+              className=" bg-slate-50 rounded border appearance-none py-2 dark:bg-stone-700 dark:text-white dark:border-none focus:outline-none font-medium focus:border-indigo-500 text-gray-600 text-base pl-3 md:pl-5 pr-8 md:pr-14"
             >
               <option value="bitcoin">Bitcoin</option>
               <option value="polygon">Polygon</option>
