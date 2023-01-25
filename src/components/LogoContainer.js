@@ -34,12 +34,12 @@ function LogoContainer() {
 
       <button
         onClick={handleThemeSwitch}
-        className="bg-green-200 my-3 mr-28 font-poppins font-medium p-4 justify-around inline-flex rounded-3xl"
+        className="bg-stone-500 dark:bg-stone-200 my-3 mr-28 font-poppins font-medium p-4 justify-around inline-flex rounded-full"
       >
-        <span className="mt-1 mr-2 font-bold">
-          <FaMoon />
+        <span className="m-1 text-white dark:text-stone-900 font-black">
+            <FaMoon />
         </span>
-        Dark Mod
+        
       </button>
     </div>
   );
