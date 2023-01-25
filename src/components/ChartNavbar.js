@@ -29,7 +29,7 @@ const ChartNavbar = ({ chartTypeHandler }) => {
   }, []);
 
   return (
-    <div className="container dark:bg-stone-900 dark:border-none   max-sm:m-1 shadow-lg hover:shadow-2xl flex flex-col md:flex-row justify-center md:justify-around items-center bg-white space-y-4 md:space-y-0 p-5">
+    <div className="container dark:bg-stone-900 dark:border-none   max-sm:m-1  flex flex-col md:flex-row justify-center md:justify-around items-center bg-white space-y-4 md:space-y-0 p-5">
       <div className="flex max-sm:w-52">
         <button
           onClick={() => dispatch(updateDays(1))}
@@ -95,7 +95,7 @@ const ChartNavbar = ({ chartTypeHandler }) => {
         <select
           defaultValue="none"
           onChange={(e) => chartTypeHandler(e.target.value)}
-          className=" bg-slate-50 max-sm:w-44 ml-4 h-12 rounded border font-poppins font-medium appearance-none py-2 focus:outline-none focus:border-cyan-400 dark:bg-stone-700 text-lg dark:border-none dark:text-white text-gray-600 text-bold pl-5 pr-14"
+          className=" bg-slate-50 max-sm:w-60 ml-4 h-12 rounded border font-poppins font-medium appearance-none py-2 focus:outline-none focus:border-cyan-400 dark:bg-stone-700 text-base dark:border-none dark:text-white text-gray-600 text-bold pl-5 pr-14"
         >
           <option value="none" disabled hidden>
             Chart Type
