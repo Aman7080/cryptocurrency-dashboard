@@ -34,7 +34,7 @@ function LogoContainer() {
 
       <button
         onClick={handleThemeSwitch}
-        className="bg-stone-500 dark:bg-stone-200 my-3 mr-28 font-poppins font-medium p-4 justify-around inline-flex rounded-full"
+        className="bg-stone-900 dark:bg-stone-200 my-3 mr-16 font-poppins font-medium p-4 justify-around inline-flex rounded-full"
       >
         <span className="m-1 text-white dark:text-stone-900 font-black">
             <FaMoon />
