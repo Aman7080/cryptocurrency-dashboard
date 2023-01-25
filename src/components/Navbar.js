@@ -46,7 +46,7 @@ export default function Navbar() {
             <option value="usd">USD</option>
             <option value="inr">INR</option>
           </select>
-          <span className="absolute right-0 top-0 h-full dark:text-white w-10 text-center text-black font-black pointer-events-none flex items-center justify-center">
+          <span className="absolute right-0 top-0 h-full dark:text-white w-20 text-center text-black font-black pointer-events-none flex items-center justify-center">
             <BsFillCaretDownFill />
           </span>
         </div>
@@ -56,8 +56,8 @@ export default function Navbar() {
         <div
           className=" bg-white dark:text-cyan-400 rounded-xl font-medium text-xl dark:bg-stone-700 border dark:border-black absolute"
           style={{
-            width: "43%",
-            marginLeft: "196px",
+            width: "47.3%",
+            marginLeft: "118px",
             zIndex: 1,
             marginTop: "-1rem",
             
