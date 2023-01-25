@@ -45,7 +45,7 @@ function CoinExchange() {
   };
 
   return (
-    <div className="mt-4 mb-14 dark:bg-stone-800 dark:border-cyan-400 dark:border-0 dark:shadow-black hover:duration-300 hover:shadow-2xl bg-white shadow-lg font-[Poppins] rounded-xl p-5 w-full">
+    <div className="mt-4  mb-14 dark:bg-stone-800 shadow-cyan-400 border-cyan-400 border-2 dark:border-0 dark:shadow-black hover:duration-300 hover:shadow-2xl bg-white shadow-lg font-[Poppins] rounded-xl p-5 w-full">
       <div className="flex flex-col md:flex-row items-center justify-between">
         <div>
           <h3 className=" font-bold dark:text-cyan-400 mt-2 text-xl ">

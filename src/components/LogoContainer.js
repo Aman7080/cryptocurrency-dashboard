@@ -1,4 +1,4 @@
-import { FaMoon } from "react-icons/fa";
+import { GiElectric } from "react-icons/gi";
 import { useState, useEffect } from "react";
 
 function LogoContainer() {
@@ -34,10 +34,10 @@ function LogoContainer() {
 
       <button
         onClick={handleThemeSwitch}
-        className="bg-stone-900 dark:bg-stone-200 my-3 mr-16 font-poppins font-medium p-4 justify-around inline-flex rounded-full"
+        className="bg-stone-900 dark:bg-stone-200 my-3 mr-16 font-poppins font-medium p-2 justify-around inline-flex rounded-full"
       >
-        <span className="m-1 text-white dark:text-stone-900 font-black">
-            <FaMoon />
+        <span className="m-1 text-white dark:text-stone-900 text-4xl font-black">
+            <GiElectric />
         </span>
         
       </button>

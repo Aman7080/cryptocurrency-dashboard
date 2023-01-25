@@ -41,7 +41,7 @@ export default function Navbar() {
           <select
             value={currency}
             onChange={(e) => dispatch(changeCurrency(e.target.value))}
-            className="h-14 dark:border-x-cyan-400 dark:border-1 dark:bg-stone-800 dark:text-white max-sm:w-26 shadow-md hover:duration-300 hover:shadow-xl bg-white rounded-xl appearance-none py-2 focus:outline-none focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
+            className="h-14 dark:border-x-cyan-400 border-2 border-cyan-400 dark:border-0 dark:bg-stone-800 dark:text-white max-sm:w-26 shadow-md hover:duration-300 hover:shadow-xl bg-white rounded-xl appearance-none py-2 focus:outline-none focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
           >
             <option value="usd">USD</option>
             <option value="inr">INR</option>
