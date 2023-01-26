@@ -119,7 +119,7 @@ export default function ChartCointainer() {
   return (
     <>
       <ChartNavbar chartTypeHandler={chartTypeHandler} />
-      <div className=" dark:border-0 shadow-cyan-400 border-cyan-400  border-2 dark:shadow-black bg-white dark:bg-stone-800  shadow-lg hover:duration-300 hover:shadow-2xl rounded-md md:p-10">
+      <div className=" dark:border-0 border-cyan-400  border-2 dark:shadow-black bg-white dark:bg-stone-800  shadow-lg hover:duration-300 hover:shadow-2xl rounded-md md:p-10">
         {chartType === "barHorizontal" && (
           <Bar data={userData} options={options1} />
         )}
