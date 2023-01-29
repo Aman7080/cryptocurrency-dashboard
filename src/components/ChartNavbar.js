@@ -87,16 +87,14 @@ const ChartNavbar = ({ chartTypeHandler }) => {
           placeholder="Cryptocurrency"
           showArrow
           selectionLimit={4}
-          className="bg-slate-50 dark:bg-stone-700 dark:border-2 font-poppins font-medium dark:decoration-none dark:ring-none dark:border-black text-lg dark:outline-black"
-        />
+          className="bg-slate-50 dark:bg-stone-700 dark:border-none font-poppins font-medium dark:decoration-none dark:ring-none text-lg"/>
       </div>
 
       <div className="relative my-2 ">
         <select
           defaultValue="none"
           onChange={(e) => chartTypeHandler(e.target.value)}
-          className=" bg-slate-50 max-sm:w-60 ml-4 h-12 rounded border font-poppins font-medium appearance-none py-2 focus:outline-none focus:border-cyan-400 dark:bg-stone-700 text-base dark:border-none dark:text-white text-gray-600 text-bold pl-5 pr-14"
-        >
+          className=" bg-slate-50 max-sm:w-60 ml-4 h-12 rounded border font-poppins font-medium appearance-none py-2 focus:outline-none focus:border-cyan-400 dark:bg-stone-700 text-base dark:border-none dark:text-white text-gray-600 text-bold pl-5 pr-14">
           <option value="none" disabled hidden>
             Chart Type
           </option>

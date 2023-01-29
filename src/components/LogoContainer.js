@@ -1,4 +1,4 @@
-import { GiElectric } from "react-icons/gi";
+import { CgDarkMode } from "react-icons/cg";
 import { useState, useEffect } from "react";
 
 function LogoContainer() {
@@ -37,7 +37,7 @@ function LogoContainer() {
         className="bg-stone-900 dark:bg-stone-200 my-3 mr-16 font-poppins font-medium p-2 justify-around inline-flex rounded-full"
       >
         <span className="m-1 text-white dark:text-stone-900 text-4xl font-black">
-            <GiElectric />
+            <CgDarkMode />
         </span>
         
       </button>
