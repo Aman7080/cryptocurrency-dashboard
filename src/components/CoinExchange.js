@@ -123,7 +123,7 @@ function CoinExchange() {
               exchangeType === "buy" ? !(buyValue > 0) : !(sellValue > 0)
             }
             onClick={exchangeType === "buy" ? handleBuy : handleSell}
-            className="bg-blue-600 text-white py-3 dark:bg-cyan-400 font-medium dark:text-black dark:hover:border-cyan-400 dark:hover:text-white dark:border-stone-900 dark:hover:bg-stone-900 px-10 rounded-md hover:bg-white hover:border-2 hover:border-sky-600/100 hover:duration-300 hover:text-sky-600 border-2 border-white disabled:opacity-100"
+            className="bg-cyan-400 text-stone-900 py-3 dark:bg-cyan-400 font-semibold dark:text-black dark:hover:border-cyan-400 dark:hover:text-white dark:border-stone-900 dark:hover:bg-stone-900 px-10 rounded-md hover:bg-stone-900 hover:border-2 hover:border-cyan-4.0 hover:duration-300 hover:text-white border-2 border-white disabled:opacity-100"
           >
             Exchange
           </button>
