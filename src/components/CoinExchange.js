@@ -45,7 +45,7 @@ function CoinExchange() {
   };
 
   return (
-    <div className="mt-4 dark:bg-stone-800 dark:border-cyan-400 dark:border-0 dark:shadow-black hover:duration-300 hover:shadow-2xl bg-white shadow-lg font-[Poppins] rounded-xl p-5 w-full">
+    <div className="mt-4  mb-14 dark:bg-stone-800 border-cyan-400 border-2 dark:border-0 dark:shadow-black hover:duration-300 hover:shadow-2xl bg-white shadow-lg font-[Poppins] rounded-xl p-5 w-full">
       <div className="flex flex-col md:flex-row items-center justify-between">
         <div>
           <h3 className=" font-bold dark:text-cyan-400 mt-2 text-xl ">
@@ -63,7 +63,7 @@ function CoinExchange() {
                 setCoin(e.target.value);
                 setExchangeType("sell");
               }}
-              className=" bg-slate-50 rounded border appearance-none py-2 dark:bg-stone-700 dark:text-white dark:border-none text-gray-600 focus:outline-none focus:border-cyan-400 font-medium text-base pl-5 pr-14"
+              className=" bg-slate-50 rounded border appearance-none py-2 dark:bg-stone-700 dark:text-white dark:border-none text-gray-600 focus:outline-none focus:border-cyan-400 font-medium text-base pl-3 md:pl-6  pr-8 md:pr-14"
             >
               {cryptoInPortfolio.map((crypto, index) => (
                 <option value={crypto.name} key={index}>
@@ -80,7 +80,7 @@ function CoinExchange() {
               type="text"
               defaultValue={"Avl " + cryptoInPortfolio[0].value}
               onChange={(e) => setSellValue(e.target.value)}
-              className="w-full bg-gray-100 bg-opacity-50 rounded border-2 dark:bg-stone-700 text-medium dark:text-orange-500 dark:border-none border-gray-300 focus:border-orange-500 text-base outline-none text-black py-1 px-3 leading-8"
+              className="w-full bg-gray-100 bg-opacity-50 rounded border-2 dark:bg-stone-700 text-medium dark:text-orange-500 dark:border-none border-gray-300 focus:border-orange-500 text-base outline-none text-black pl-1 md:py-1 mr-3 md:px-3 leading-8"
             />
           </div>
         </div>
@@ -93,7 +93,7 @@ function CoinExchange() {
                 setCoin(e.target.value);
                 setExchangeType("buy");
               }}
-              className=" bg-slate-50 rounded border appearance-none py-2 dark:bg-stone-700 dark:text-white dark:border-none focus:outline-none font-medium focus:border-indigo-500 text-gray-600 text-base pl-5 pr-14"
+              className=" bg-slate-50 rounded border appearance-none py-2 dark:bg-stone-700 dark:text-white dark:border-none focus:outline-none font-medium focus:border-indigo-500 text-gray-600 text-base pl-3 md:pl-5 pr-8 md:pr-14"
             >
               <option value="bitcoin">Bitcoin</option>
               <option value="polygon">Polygon</option>
@@ -123,7 +123,7 @@ function CoinExchange() {
               exchangeType === "buy" ? !(buyValue > 0) : !(sellValue > 0)
             }
             onClick={exchangeType === "buy" ? handleBuy : handleSell}
-            className="bg-blue-600 text-white py-3 dark:bg-cyan-400 font-medium dark:text-black dark:hover:text-white dark:border-stone-900 dark:hover:bg-stone-900 px-10 rounded-md hover:bg-white hover:border-2 hover:border-sky-600/100 hover:duration-300 hover:text-sky-600 border-2 border-white disabled:opacity-100"
+            className="bg-cyan-400 text-stone-900 py-3 dark:bg-cyan-400 font-semibold dark:text-black dark:hover:border-cyan-400 dark:hover:text-white dark:border-stone-900 dark:hover:bg-stone-900 px-10 rounded-md hover:bg-stone-900 hover:border-2 hover:border-cyan-4.0 hover:duration-300 hover:text-white border-2 border-stone-900 disabled:opacity-100"
           >
             Exchange
           </button>

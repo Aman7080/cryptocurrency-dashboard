@@ -1,4 +1,4 @@
-import { FaMoon } from "react-icons/fa";
+import { CgDarkMode } from "react-icons/cg";
 import { useState, useEffect } from "react";
 
 function LogoContainer() {
@@ -25,7 +25,7 @@ function LogoContainer() {
   };
 
   return (
-    <div className="dark:bg-stone-800 dark:outline-none dark:border-none flex justify-between shadow-md border ">
+    <div className="dark:bg-stone-600 dark:outline-none dark:border-none flex justify-between shadow-md border ">
       <img
         className=" h-14 my-3 bg-white dark:bg-stone-600 px-10 rounded-2xl "
         src="/logo.png"
@@ -34,12 +34,12 @@ function LogoContainer() {
 
       <button
         onClick={handleThemeSwitch}
-        className="bg-green-200 my-3 mr-28 font-poppins font-medium p-4 justify-around inline-flex rounded-3xl"
+        className="bg-stone-900 dark:bg-stone-200 my-3 mr-16 font-poppins font-medium p-2 justify-around inline-flex rounded-full"
       >
-        <span className="mt-1 mr-2 font-bold">
-          <FaMoon />
+        <span className="m-1 text-white dark:text-stone-900 text-4xl font-black">
+            <CgDarkMode />
         </span>
-        Dark Mod
+        
       </button>
     </div>
   );

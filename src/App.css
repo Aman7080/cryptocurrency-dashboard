@@ -4,10 +4,14 @@
 }
 
 
-/* body{
+body{
   padding-bottom: 0rem;
   margin-bottom: 3rem;
-} */
+  
+}
+body:dark{
+  background-color: #282c34;
+}
 
 .App {
   text-align: center;
