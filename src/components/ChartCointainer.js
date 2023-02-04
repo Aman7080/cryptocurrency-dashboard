@@ -13,10 +13,91 @@ export default function ChartCointainer() {
   const days = useSelector((state) => state.defaultDays)[0];
   const coinInState = useSelector((state) => state.selectCoin);
   const [graphDataset, setGraphDataset] = useState([]);
+  const [currentCoinLength, setCurrentCoinLength] = useState(1);
+  const [shouldCallApi, setShouldCallApi] = useState(false);
 
   // const [selecteValues, setSelectedValue] = useState(selectedData)
 
   const selectedData = useSelector((state) => state?.selectCoin);
+  console.log("coininstate", coinInState);
+
+  const checkExistence = (name) => {
+    for (let i = 0; i < graphDataset?.length; i++) {
+      if (graphDataset[i]?.label === name) {
+        return true;
+      }
+      return false;
+    }
+  };
+
+  const getDataforCurrentCoin = (crypto) => {
+    const url = `https://api.coingecko.com/api/v3/coins/${crypto}/market_chart?vs_currency=${currency}&days=${days}&interval=${interval}`;
+    axios.get(url).then((res) => {
+      let temp = {
+        label: crypto,
+        data: res.data.prices.map((price) => price[1]),
+        borderColor: randColor(),
+        backgroundColor: randColor(),
+        pointRadius: "0",
+      };
+      setGraphDataset([...graphDataset, temp]);
+    });
+  };
+
+  const getFromCheckInCoinState = (coinName) => {
+    console.log("checking for", coinName);
+    for (let i = 0; i < coinInState?.length; i++) {
+      console.log("line80", coinName, coinInState[i]);
+      if (coinName == coinInState[i]) {
+        console.log("returning false for", coinName);
+        return false;
+      }
+    }
+    console.log("returning true for", coinName);
+    return true;
+  };
+
+  const getRemovedIndex = () => {
+    console.log("first second", graphDataset, coinInState);
+    for (let z = 0; z < graphDataset?.length; z++) {
+      // console.log('passing',graphDataset[z]?.label);
+      let flag = getFromCheckInCoinState(graphDataset[z]?.label);
+      if (flag) {
+        console.log("returning", flag, z);
+        return z;
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (coinInState?.length < currentCoinLength) {
+      let idx = getRemovedIndex();
+
+      let filteredGraphdata = graphDataset?.filter(
+        (obj) => obj?.label !== graphDataset[idx]?.label
+      );
+      setGraphDataset(filteredGraphdata);
+      setCurrentCoinLength(coinInState?.length);
+
+      // updateGraphdataSet(removedCoin)
+    } else {
+      setCurrentCoinLength(coinInState?.length);
+      if (shouldCallApi)
+        getDataforCurrentCoin(coinInState[coinInState?.length - 1]);
+    }
+  }, [coinInState]);
+
+  const graphdataSetHandler = (val) => {
+    if (graphDataset?.length === 0) {
+      return [val];
+    }
+    let isExist = checkExistence(val?.label);
+    if (isExist) {
+      return graphDataset;
+    } else {
+      return [...graphDataset, val];
+    }
+  };
 
   useEffect(() => {
     if (days < 5) {
@@ -43,22 +124,13 @@ export default function ChartCointainer() {
             pointRadius: "0",
           };
 
-          if (graphDataset.length == 0) {
-            setGraphDataset([temp]);
-          } else if (
-            graphDataset.filter((temp) => temp.label == crypto).length < 1
-          ) {
-            console.log("push");
-            setGraphDataset((prevState) => [...prevState, temp]);
-          }
+          let ans = graphdataSetHandler(temp);
+          setGraphDataset(ans);
+          setShouldCallApi(true);
         })
         .catch((err) => console.log(err));
     });
-  }, [interval, coinInState, currency, days]);
-
-  useEffect(() => {
-    setGraphDataset(selectedData);
-  }, [selectedData]);
+  }, [interval, currency, days]);
 
   // creating random color for chart lines
   const randColor = () => {
@@ -114,7 +186,7 @@ export default function ChartCointainer() {
     },
   };
 
-  console.log("userdata is", userData);
+  // console.log("userdata is", userData);
 
   return (
     <>
@@ -131,4 +203,3 @@ export default function ChartCointainer() {
     </>
   );
 }
-y;

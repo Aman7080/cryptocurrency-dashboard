@@ -11,7 +11,8 @@ const selectCoinSlice = createSlice({
       state.push(action.payload[action.payload.length - 1]);
     },
     removecoin: (state, action) => {
-      state.splice(state.indexOf(action.payload), 1);
+      // state.splice(state.indexOf(action.payload), 1);
+      return [...action.payload];
     },
   },
 });

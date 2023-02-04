@@ -14,7 +14,7 @@ function CoinExchange() {
 
   const handleBuy = () => {
     // color for pie chart
-    console.log("handlebuy");
+    // console.log("handlebuy");
     const randColor = () => {
       return (
         "#" +
@@ -33,12 +33,12 @@ function CoinExchange() {
   const cryptoInPortfolio = useSelector((state) => state.cryptoPortfolio);
   //console.log(cryptoInPortfolio[0])
   const handleSell = () => {
-    console.log("handlesell");
+    // console.log("handlesell");
     if (cryptoInPortfolio.find((crypto) => crypto.name === coin)) {
       dispatch(sellcoin({ name: coin, value: sellValue }));
     } else {
       setError("coin not available");
-      console.log(error);
+      // console.log(error);
     }
     setSellValue(0);
     setCoin("bitcoin");

@@ -12,7 +12,7 @@ export default function Navbar() {
   const [inputValue, setInputValue] = useState("");
 
   const fillCompleteName = (name) => {
-    console.log("got name is", name);
+    // console.log("got name is", name);
     setInputValue(name);
     setSearchData([]);
     setTimeout(() => {
@@ -60,7 +60,6 @@ export default function Navbar() {
             marginLeft: "196px",
             zIndex: 1,
             marginTop: "-1rem",
-            
           }}
         >
           {searchData.map((crypto, index) => {

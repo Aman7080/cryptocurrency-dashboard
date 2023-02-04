@@ -9,10 +9,9 @@ import { useState, useEffect } from "react";
 
 const ChartNavbar = ({ chartTypeHandler }) => {
   const [data, setData] = useState([]);
-  const [selectedValues, setSelectedValues] = useState(["etherium"]);
+  const [selectedValues, setSelectedValues] = useState(["ethereum"]);
   const dispatch = useDispatch();
   const valuueee = useSelector((state) => state?.selectCoin);
-  console.log("valuee is", valuueee);
   const url =
     "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=40&page=1&sparkline=false";
   useEffect(() => {
@@ -21,10 +20,7 @@ const ChartNavbar = ({ chartTypeHandler }) => {
       .then((response) => {
         setData(response.data);
       })
-      .catch((error) => {
-        // handle error
-        console.log(error);
-      });
+      .catch((error) => {});
   }, []);
 
   return (
@@ -67,17 +63,17 @@ const ChartNavbar = ({ chartTypeHandler }) => {
           selectedValues={selectedValues}
           options={data.map((crypto) => crypto.id)}
           isObject={false}
-          onRemove={(event) => {
-            console.log("eeee", event);
+          onRemove={(loda) => {
+            // console.log("removed", event);
+            dispatch(removecoin(loda));
 
-            dispatch(
-              event === [] || event?.length === 0
-                ? selectCoin(["ethereum"])
-                : selectCoin(event)
-            );
+            // dispatch(
+            //   event === [] || event?.length === 0
+            //     ? selectCoin(["ethereum"])
+            //     : selectCoin(event)
+            // );
           }}
           onSelect={(event) => {
-            console.log("adding ", event);
             dispatch(selectCoin(event));
           }}
           showCheckbox
