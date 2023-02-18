@@ -3,18 +3,18 @@ import { BsFillCaretDownFill } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { buycoin, sellcoin } from "../state/features/exchangeCoin";
 
+// Components Coin Exchange Div and it's features
 function CoinExchange() {
   const [exchangeType, setExchangeType] = useState("buy");
   const [buyValue, setBuyValue] = useState(0);
   const [sellValue, setSellValue] = useState(0);
   const [coin, setCoin] = useState("bitcoin");
-  const [error, setError] = useState(null);
-
+  const [error, setError] = useState("");
   const dispatch = useDispatch();
 
+  // function for buying cryptocoin
   const handleBuy = () => {
     // color for pie chart
-    // console.log("handlebuy");
     const randColor = () => {
       return (
         "#" +
@@ -24,21 +24,22 @@ function CoinExchange() {
           .toUpperCase()
       );
     };
-
     dispatch(buycoin({ name: coin, value: buyValue, color: randColor() }));
-
     setBuyValue(0);
     setCoin("bitcoin");
   };
+
   const cryptoInPortfolio = useSelector((state) => state.cryptoPortfolio);
-  //console.log(cryptoInPortfolio[0])
+
+  // function for selling cryptocoin
   const handleSell = () => {
-    // console.log("handlesell");
-    if (cryptoInPortfolio.find((crypto) => crypto.name === coin)) {
+    const checkCoinInState = cryptoInPortfolio.find(
+      (crypto) => crypto.name === coin
+    );
+    if (checkCoinInState && checkCoinInState.value - sellValue > 0) {
       dispatch(sellcoin({ name: coin, value: sellValue }));
     } else {
-      setError("coin not available");
-      // console.log(error);
+      setError("Not That Much Coin!!! Buy More to Sell More");
     }
     setSellValue(0);
     setCoin("bitcoin");
@@ -54,6 +55,7 @@ function CoinExchange() {
         </div>
       </div>
       <div className="flex flex-col ">
+        {/* Selling Coins */}
         <div className="flex items-center justify-around space-x-5 pt-4 mt-5 ">
           <h4 className="text-orange-600 text-xl">Sell</h4>
           <div className="relative">
@@ -77,14 +79,15 @@ function CoinExchange() {
           </div>
           <div>
             <input
-              type="text"
-              defaultValue={"Avl " + cryptoInPortfolio[0].value}
+              type="number"
+              defaultValue="0"
               onChange={(e) => setSellValue(e.target.value)}
               className="w-full bg-gray-100 bg-opacity-50 rounded border-2 dark:bg-stone-700 text-medium dark:text-orange-500 dark:border-none border-gray-300 focus:border-orange-500 text-base outline-none text-black pl-1 md:py-1 mr-3 md:px-3 leading-8"
             />
           </div>
         </div>
         <div className="flex justify-around items-center pt-4 mt-5 space-x-5">
+          {/* Buying Coins */}
           <h4 className="text-green-600 text-xl">Buy</h4>
           <div className="relative">
             <select
@@ -109,15 +112,16 @@ function CoinExchange() {
           <div>
             <input
               type="number"
-              //placeholder="Avl:0.002BTC"
-              className="w-full rounded text-base dark:bg-stone-800 dark:text-green-700 decoration-none outline-none text-green-600 py-1 px-3 leading-8"
-              // disabled
+              className="w-full bg-gray-100 bg-opacity-50 rounded border-2 text-base dark:bg-stone-700 dark:text-green-700 decoration-none outline-none text-green-600 dark:border-none py-1 px-3 leading-8"
               value={buyValue}
               onChange={(e) => setBuyValue(e.target.value)}
             />
           </div>
         </div>
-        <div className="flex justify-center pt-8">
+        {error && (
+          <p className="flex justify-center text-red-600 my-8">{error}</p>
+        )}
+        <div className="flex justify-center pt-2">
           <button
             disabled={
               exchangeType === "buy" ? !(buyValue > 0) : !(sellValue > 0)
@@ -125,7 +129,7 @@ function CoinExchange() {
             onClick={exchangeType === "buy" ? handleBuy : handleSell}
             className="bg-cyan-400 text-stone-900 py-3 dark:bg-cyan-400 font-semibold dark:text-black dark:hover:border-cyan-400 dark:hover:text-white dark:border-stone-900 dark:hover:bg-stone-900 px-10 rounded-md hover:bg-stone-900 hover:border-2 hover:border-cyan-4.0 hover:duration-300 hover:text-white border-2 border-stone-900 disabled:opacity-100"
           >
-            Exchange
+            {exchangeType.toUpperCase()}
           </button>
         </div>
       </div>

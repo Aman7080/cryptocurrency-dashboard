@@ -12,7 +12,6 @@ export default function Navbar() {
   const [inputValue, setInputValue] = useState("");
 
   const fillCompleteName = (name) => {
-    // console.log("got name is", name);
     setInputValue(name);
     setSearchData([]);
     setTimeout(() => {
