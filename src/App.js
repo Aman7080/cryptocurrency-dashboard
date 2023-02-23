@@ -16,7 +16,9 @@ function App() {
         <div className="container max-w-screen-lg">
           <div>
             <Navbar />
-            <ChartCointainer />
+            
+            <ChartCointainer/>
+            
             <div className="flex flex-col md:flex-row md:space-x-4">
               <Portfolio />
               <CoinExchange />

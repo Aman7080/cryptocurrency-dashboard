@@ -25,7 +25,7 @@ const ChartNavbar = ({ chartTypeHandler }) => {
 
 
   return (
-    <div className="container dark:bg-stone-900 dark:border-none   max-sm:m-1  flex flex-col md:flex-row justify-center md:justify-around items-center bg-white space-y-4 md:space-y-0 p-5">
+    <div className="container border-cyan-400 dark:bg-stone-900 dark:border-none   max-sm:m-1  flex flex-col md:flex-row justify-center md:justify-around items-center bg-white space-y-4 md:space-y-0 p-5">
       <div className="flex max-sm:w-52">
         <button
           onClick={() => dispatch(updateDays(1))}
