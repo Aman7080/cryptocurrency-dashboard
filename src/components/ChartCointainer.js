@@ -140,14 +140,14 @@ export default function ChartCointainer() {
   return (
     <>
       <ChartNavbar chartTypeHandler={chartTypeHandler} />
-      <div className=" bg-white dark:bg-stone-800 border-2 border-cyan-400 shadow-lg hover:duration-300 hover:shadow-2xl rounded-xl dark:border-transparent px-10 pb-10">
+      <div className=" bg-white dark:bg-stone-800 border-2 h-96 sm:h-full border-cyan-400 shadow-lg hover:duration-300 hover:shadow-2xl rounded-xl dark:border-transparent  sm:px-10 p-0 sm:pb-10">
         {chartType === "barHorizontal" && (
           <Bar data={userData} options={options1} />
         )}
         {chartType === "barVertical" && (
           <Bar data={userData} options={options} />
         )}
-        {chartType === "line" && <Line data={userData} options={options} />}
+        <div className="h-full">{chartType === "line" && <Line data={userData} options={options} />}</div>
       </div>
     </>
   );
