@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 const Coins = () => {
   const [data, setData] = useState([]);
   const currency = useSelector((state) => state.defaultCurrency)[0];
-  const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=11&page=1&sparkline=false`;
+  const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=9&page=1&sparkline=false`;
 
   useEffect(() => {
     axios
@@ -29,7 +29,7 @@ const Coins = () => {
           </h2>
         </div>
 
-        <div className="coins  m-6 rounded-xl  overflow-y-auto max-h-screen scroll-smooth scrollbar-hide">
+        <div className="coins  m-6 rounded-xl  overflow-y-auto max-h-full scroll-smooth scrollbar-hide">
           {data.map((coin) => (
             <div
               className="coin-info dark:bg-stone-800 border-b-[0.05rem] flex justify-between  bg-white mb-0.5 p-5"

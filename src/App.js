@@ -6,13 +6,11 @@ import Coins from "./components/CoinsMktCap";
 import Portfolio from "./components/Portfolio";
 import CoinExchange from "./components/CoinExchange";
 function App() {
- 
   // class Question extends React.Component {
   return (
-    
     <div className="dark:bg-stone-900 bg-neutral-50">
       <LogoContainer />
-      <div className="flex dark:bg-stone-900 flex-col items-center md:items-start md:flex-row justify-center m-10 ">
+      <div className="flex dark:bg-stone-900 flex-col items-center md:items-start lg:flex-row justify-center m-10 max-[820px]:flex-col">
         <div className="container max-w-screen-lg">
           <div>
             <Navbar />
@@ -23,14 +21,12 @@ function App() {
             </div>
           </div>
         </div>
-        <div className=" mx-5 w-full md:w-1/4  dark:bg-stone-900">
-          
+        <div className="max-[820px]:flex-col mx-5 w-full h-full lg:w-1/4  dark:bg-stone-900">
           <Coins />
         </div>
       </div>
     </div>
   );
 }
-
 
 export default App;

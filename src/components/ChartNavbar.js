@@ -64,21 +64,9 @@ const ChartNavbar = ({ chartTypeHandler }) => {
           selectedValues={selectedValues}
           options={data.map((crypto) => crypto.id)}
           isObject={false}
-<<<<<<< HEAD
           onRemove={(loda) => {
             // console.log("removed", event);
             dispatch(removecoin(loda));
-=======
-          
-          onRemove={(event) => {
-            console.log("eeee", event);
->>>>>>> a5b961f0ec03e057f667dc4ac77435b36c76f4eb
-
-            // dispatch(
-            //   event === [] || event?.length === 0
-            //     ? selectCoin(["ethereum"])
-            //     : selectCoin(event)
-            // );
           }}
           onSelect={(event) => {
             dispatch(selectCoin(event));
@@ -88,14 +76,16 @@ const ChartNavbar = ({ chartTypeHandler }) => {
           placeholder="Cryptocurrency"
           showArrow
           selectionLimit={4}
-          className="bg-slate-50  dark:bg-stone-700 dark:border border-cyan-400 border-2 dark:border-orange-400 rounded-md font-poppins font-medium dark:decoration-none dark:ring-none text-lg"/>
+          className="bg-slate-50  dark:bg-stone-700 dark:border border-cyan-400 border-2 dark:border-orange-400 rounded-md font-poppins font-medium dark:decoration-none dark:ring-none text-lg"
+        />
       </div>
 
       <div className="relative my-2 ">
         <select
           defaultValue="none"
           onChange={(e) => chartTypeHandler(e.target.value)}
-          className=" bg-slate-50 max-sm:w-60 ml-4 h-12 rounded border font-poppins font-medium appearance-none py-2 focus:outline-none  focus:border-cyan-400 dark:bg-stone-700 text-base dark:border-none dark:text-white text-gray-600 text-bold pl-5 pr-14">
+          className=" bg-slate-50 max-sm:w-60 ml-4 h-12 rounded border font-poppins font-medium appearance-none py-2 focus:outline-none  focus:border-cyan-400 dark:bg-stone-700 text-base dark:border-none dark:text-white text-gray-600 text-bold pl-5 pr-14"
+        >
           <option value="none" disabled hidden>
             Chart Type
           </option>
