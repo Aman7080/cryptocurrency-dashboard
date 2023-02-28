@@ -147,7 +147,7 @@ export default function ChartCointainer() {
         {chartType === "barVertical" && (
           <Bar data={userData} options={options} />
         )}
-        {chartType === "line" && (<Line data={userData} options={options} />)}
+        {chartType === "line" && (<Line data={userData}  options={options} />)}
       </div>
     </>
   );
