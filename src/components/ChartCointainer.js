@@ -124,20 +124,9 @@ export default function ChartCointainer() {
             pointRadius: "0",
           };
 
-<<<<<<< HEAD
           let ans = graphdataSetHandler(temp);
           setGraphDataset(ans);
           setShouldCallApi(true);
-=======
-          if (graphDataset.length === 0) {
-            setGraphDataset([temp]);
-          } else if (
-            graphDataset.filter((temp) => temp.label === crypto).length < 1
-          ) {
-            console.log("push");
-            setGraphDataset((prevState) => [...prevState, temp]);
-          }
->>>>>>> a5b961f0ec03e057f667dc4ac77435b36c76f4eb
         })
         .catch((err) => console.log(err));
     });
@@ -201,15 +190,17 @@ export default function ChartCointainer() {
 
   return (
     <>
-      <ChartNavbar chartTypeHandler={chartTypeHandler}/>
+      <ChartNavbar chartTypeHandler={chartTypeHandler} />
       <div className=" dark:border-0 border-cyan-400  border-2 dark:shadow-black bg-white dark:bg-stone-800  shadow-lg hover:duration-300 hover:shadow-2xl rounded-md md:p-10">
         {chartType === "barHorizontal" && (
-          <Bar data={userData} options={options1} />
+          <Bar data={userData} height={450} options={options1} />
         )}
         {chartType === "barVertical" && (
-          <Bar data={userData} options={options} />
+          <Bar data={userData} height={450} options={options} />
         )}
-        {chartType === "line" && <Line data={userData} options={options} />}
+        {chartType === "line" && (
+          <Line data={userData} height={450} options={options} />
+        )}
       </div>
     </>
   );
