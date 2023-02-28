@@ -1,31 +1,31 @@
 import { BsFillCaretDownFill } from "react-icons/bs";
-import Select from "multiselect-react-dropdown";
-import { Multiselect } from "multiselect-react-dropdown";
-// import { cryptocoins } from "../Data/cryptocoins";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { updateDays } from "../state/features/days";
-import { selectCoin, removecoin } from "../state/features/coinSelection";
+import { selectCoin } from "../state/features/coinSelection";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
 const ChartNavbar = ({ chartTypeHandler }) => {
   const [data, setData] = useState([]);
-  const [selectedValues, setSelectedValues] = useState(["ethereum"]);
   const dispatch = useDispatch();
-  const valuueee = useSelector((state) => state?.selectCoin);
+
   const url =
     "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=40&page=1&sparkline=false";
   useEffect(() => {
+    console.log("useeffect of navbar")
     axios
       .get(url)
       .then((response) => {
         setData(response.data);
       })
-      .catch((error) => {});
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
+
   return (
-    <div className="container dark:bg-stone-900 dark:border-none   max-sm:m-1  flex flex-col md:flex-row justify-center md:justify-around items-center bg-white space-y-4 md:space-y-0 p-5">
+    <div className="container border-cyan-400 dark:bg-stone-900 dark:border-none   max-sm:m-1  flex flex-col md:flex-row justify-center md:justify-around items-center bg-white space-y-4 md:space-y-0 p-5">
       <div className="flex max-sm:w-52">
         <button
           onClick={() => dispatch(updateDays(1))}
@@ -60,6 +60,7 @@ const ChartNavbar = ({ chartTypeHandler }) => {
       </div>
 
       <div className="">
+<<<<<<< HEAD
         <Multiselect
           selectedValues={selectedValues}
           options={data.map((crypto) => crypto.id)}
@@ -78,6 +79,25 @@ const ChartNavbar = ({ chartTypeHandler }) => {
           selectionLimit={4}
           className="bg-slate-50  dark:bg-stone-700 dark:border border-cyan-400 border-2 dark:border-orange-400 rounded-md font-poppins font-medium dark:decoration-none dark:ring-none text-lg"
         />
+=======
+        <div className="relative my-2">
+          <select
+            defaultValue="crypto"
+            onChange={(e) => dispatch(selectCoin(e.target.value))}
+            className=" bg-slate-50 rounded border appearance-none py-2 focus:outline-none focus:border-indigo-500 text-gray-600 pl-5 pr-14  dark:bg-stone-700 text-base dark:border-none dark:text-white"
+          >
+            <option value="crypto">Cryptocurrency</option>
+            {data.map((coins) => (
+              <option key={coins.id} value={coins.id}>
+                {coins.name}
+              </option>
+            ))}
+          </select>
+          <span className="absolute right-0 top-0 h-full w-10 text-center text-black font-black pointer-events-none flex items-center justify-center">
+            <BsFillCaretDownFill />
+          </span>
+        </div>
+>>>>>>> d670a04a42373e8f1bf067d5aa183cc2f11ebb72
       </div>
 
       <div className="relative my-2 ">

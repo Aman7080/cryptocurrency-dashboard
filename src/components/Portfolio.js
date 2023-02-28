@@ -5,7 +5,6 @@ import { Chart as chartjs } from "chart.js/auto"; //don't delete this line
 function PortfolioContainer() {
   // Coins available in porfolio
   const cryptoInPortfolio = useSelector((state) => state.cryptoPortfolio);
-  //const currency = useSelector((state) => state.defaultCurrency)[0];
 
   // calculating money available in portfolio
   let totalValue = 0;
@@ -64,7 +63,7 @@ function PortfolioContainer() {
           <h3 className="dark:text-cyan-400 font-poppins font-bold text-xl ">Portfolio</h3>
         </div>
         <div className="flex flex-col text-xl items-center md:flex-row ">
-          <p className=" text-slate-400 dark:text-cyan-400 ">Total Value {" "}</p>
+          <p className=" text-slate-400 dark:text-cyan-400 mr-1">Total Value {" "}</p>
           <p className=" text-black dark:text-white font-semibold">{totalValue}</p>
         </div>
       </div>

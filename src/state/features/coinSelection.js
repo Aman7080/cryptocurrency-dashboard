@@ -8,14 +8,10 @@ const selectCoinSlice = createSlice({
   initialState,
   reducers: {
     selectCoin: (state, action) => {
-      state.push(action.payload[action.payload.length - 1]);
-    },
-    removecoin: (state, action) => {
-      // state.splice(state.indexOf(action.payload), 1);
-      return [...action.payload];
+      state[0] = action.payload;
     },
   },
 });
 
-export const { selectCoin, removecoin } = selectCoinSlice.actions;
+export const { selectCoin } = selectCoinSlice.actions;
 export default selectCoinSlice.reducer;
