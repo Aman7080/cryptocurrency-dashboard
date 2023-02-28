@@ -164,6 +164,7 @@ export default function ChartCointainer() {
   return (
     <>
       <ChartNavbar chartTypeHandler={chartTypeHandler} />
+<<<<<<< HEAD
       <div className=" dark:border-0 border-cyan-400  border-2 dark:shadow-black bg-white dark:bg-stone-800  shadow-lg hover:duration-300 hover:shadow-2xl rounded-md md:p-10">
         {chartType === "barHorizontal" && (
           <Bar data={userData} height={450} options={options1} />
@@ -174,6 +175,16 @@ export default function ChartCointainer() {
         {chartType === "line" && (
           <Line data={userData} height={450} options={options} />
         )}
+=======
+      <div className=" bg-white dark:bg-stone-800 border-2 border-cyan-400 shadow-lg hover:duration-300 hover:shadow-2xl rounded-xl dark:border-transparent  sm:px-10 p-0 sm:pb-10">
+        {chartType === "barHorizontal" && (
+          <Bar data={userData} height={(450)} options={options1} />
+        )}
+        {chartType === "barVertical" && (
+          <Bar data={userData} height={(450)} options={options} />
+        )}
+        {chartType === "line" && (<Line data={userData} height={(450)} options={options} />)}
+>>>>>>> d85929f463fa753a3f4a8b008533b68769a60856
       </div>
     </>
   );
