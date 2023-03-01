@@ -1,15 +1,14 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-
-body{
+body {
   padding-bottom: 0rem;
   margin-bottom: 0rem;
-  
+  background-color: rgb(27, 25, 27);
 }
-body:dark{
+body:dark {
   background-color: #282c34;
 }
 
