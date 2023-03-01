@@ -6,7 +6,7 @@ import Coins from "./components/CoinsMktCap";
 import Portfolio from "./components/Portfolio";
 import CoinExchange from "./components/CoinExchange";
 import { useEffect, useState } from "react";
-import { BallTriangle } from "react-loader-spinner";
+import { RotatingLines } from "react-loader-spinner";
 
 function App() {
   const [completed, setCompleted] = useState(undefined);
@@ -21,14 +21,11 @@ function App() {
     <>
       {!completed ? (
         <div className="w-screen h-[90vh] flex justify-center items-center ">
-          <BallTriangle
-            height={100}
-            width={100}
-            radius={5}
-            color="#4fa94d"
-            ariaLabel="ball-triangle-loading"
-            wrapperClass={{}}
-            wrapperStyle=""
+          <RotatingLines
+            strokeColor="grey"
+            strokeWidth="5"
+            animationDuration="0.75"
+            width="96"
             visible={true}
           />
         </div>
