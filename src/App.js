@@ -25,7 +25,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className=" mx-5 w-full md:w-1/4  dark:bg-stone-900">
+        <div className=" mx-5 w-full md:w-1/4 dark:bg-stone-900">
           
           <Coins />
         </div>
