@@ -23,7 +23,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="max-[820px]:flex-col mx-4 h-[82rem]   dark:bg-stone-900">
+          <div className="max-[1022px]:flex-col max-[1022px]:w-full max-[1022px]:mx-0 mx-4 h-[83rem]   dark:bg-stone-900">
             <Coins />
           </div>
         </div>

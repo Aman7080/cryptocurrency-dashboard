@@ -29,7 +29,7 @@ const Coins = () => {
           </h2>
         </div>
 
-        <div className="coins  m-6 rounded-xl  overflow-y-auto h-[76rem] scroll-smooth scrollbar-hide">
+        <div className="coins  m-6 rounded-xl  overflow-y-auto h-[75.1rem] scroll-smooth scrollbar-hide">
           {data ? (
             <table className="w-full  table-auto  ">
               <tbody>
