@@ -12,7 +12,7 @@ const ChartNavbar = ({ chartTypeHandler }) => {
   const url =
     "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=40&page=1&sparkline=false";
   useEffect(() => {
-    console.log("useeffect of navbar")
+    console.log("useeffect of navbar");
     axios
       .get(url)
       .then((response) => {
@@ -22,7 +22,6 @@ const ChartNavbar = ({ chartTypeHandler }) => {
         console.log(error);
       });
   }, []);
-
 
   return (
     <div className="container border-cyan-400 dark:bg-stone-900 dark:border-none   max-sm:m-1  flex flex-col md:flex-row justify-center md:justify-around items-center bg-white space-y-4 md:space-y-0 p-5">
@@ -60,26 +59,6 @@ const ChartNavbar = ({ chartTypeHandler }) => {
       </div>
 
       <div className="">
-<<<<<<< HEAD
-        <Multiselect
-          selectedValues={selectedValues}
-          options={data.map((crypto) => crypto.id)}
-          isObject={false}
-          onRemove={(loda) => {
-            // console.log("removed", event);
-            dispatch(removecoin(loda));
-          }}
-          onSelect={(event) => {
-            dispatch(selectCoin(event));
-          }}
-          showCheckbox
-          closeOnSelect
-          placeholder="Cryptocurrency"
-          showArrow
-          selectionLimit={4}
-          className="bg-slate-50  dark:bg-stone-700 dark:border border-cyan-400 border-2 dark:border-orange-400 rounded-md font-poppins font-medium dark:decoration-none dark:ring-none text-lg"
-        />
-=======
         <div className="relative my-2">
           <select
             defaultValue="crypto"
@@ -97,7 +76,6 @@ const ChartNavbar = ({ chartTypeHandler }) => {
             <BsFillCaretDownFill />
           </span>
         </div>
->>>>>>> d670a04a42373e8f1bf067d5aa183cc2f11ebb72
       </div>
 
       <div className="relative my-2 ">

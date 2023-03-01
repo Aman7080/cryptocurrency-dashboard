@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 const Coins = () => {
   const [data, setData] = useState([]);
   const currency = useSelector((state) => state.defaultCurrency)[0];
-  const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=9&page=1&sparkline=false`;
+  const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=100&page=1&sparkline=false`;
 
   useEffect(() => {
     axios
@@ -29,42 +29,52 @@ const Coins = () => {
           </h2>
         </div>
 
-        <div className="coins  m-6 rounded-xl  overflow-y-auto max-h-full scroll-smooth scrollbar-hide">
-          {data.map((coin) => (
-            <div
-              className="coin-info dark:bg-stone-800 border-b-[0.05rem] flex justify-between  bg-white mb-0.5 p-5"
-              key={coin.id}
-            >
-              {" "}
-              <img className=" h-8 w-8 mr-1" alt={coin.name} src={coin.image} />
-              <div className="coin-name ">
-                <h3 className="font-bold dark:text-white">{coin.name}</h3>
-                <p className="text-sm dark:text-cyan-400 text-slate-600">
-                  Mkt.cap {currency === "usd" ? <>&#36;</> : <>&#8377;</>}
-                  {coin.market_cap.toLocaleString()}
-                </p>
-              </div>
-              {coin.price_change_24h < 0 ? (
-                <div className="coin-rate flex bg-white dark:bg-stone-800 items-center">
-                  <p>
-                    <RiArrowDownSFill size="2rem" color="red" />
-                  </p>
-                  <h4 className="text-red-600 font-semibold">
-                    {coin.market_cap_change_percentage_24h.toFixed(4)}%
-                  </h4>
-                </div>
-              ) : (
-                <div className="coin-rate flex dark:bg-stone-800 bg-white items-center">
-                  <p>
-                    <RiArrowUpSFill size="2rem" color="green" />
-                  </p>
-                  <h4 className="text-green-600 font-semibold">
-                    {coin.price_change_24h.toFixed(4)}%
-                  </h4>
-                </div>
-              )}
-            </div>
-          ))}
+        <div className="coins  m-6 rounded-xl  overflow-y-auto h-[76rem] scroll-smooth scrollbar-hide">
+          {data ? (
+            <table className="w-full  table-auto  ">
+              <tbody>
+                {data.map((coin) => (
+                  <div
+                    className="coin-info dark:bg-stone-800 border-b-[0.05rem] flex justify-between  bg-white mb-0.5 p-5"
+                    key={coin.id}
+                  >
+                    {" "}
+                    <img
+                      className=" h-8 w-8 mr-1"
+                      alt={coin.name}
+                      src={coin.image}
+                    />
+                    <div className="coin-name ">
+                      <h3 className="font-bold dark:text-white">{coin.name}</h3>
+                      <p className="text-sm dark:text-cyan-400 text-slate-600">
+                        Mkt.cap {currency === "usd" ? <>&#36;</> : <>&#8377;</>}
+                        {coin.market_cap.toLocaleString()}
+                      </p>
+                    </div>
+                    {coin.price_change_24h < 0 ? (
+                      <div className="coin-rate flex bg-white dark:bg-stone-800 items-center">
+                        <p>
+                          <RiArrowDownSFill size="2rem" color="red" />
+                        </p>
+                        <h4 className="text-red-600 font-semibold">
+                          {coin.market_cap_change_percentage_24h.toFixed(4)}%
+                        </h4>
+                      </div>
+                    ) : (
+                      <div className="coin-rate flex dark:bg-stone-800 bg-white items-center">
+                        <p>
+                          <RiArrowUpSFill size="2rem" color="green" />
+                        </p>
+                        <h4 className="text-green-600 font-semibold">
+                          {coin.price_change_24h.toFixed(4)}%
+                        </h4>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </tbody>
+            </table>
+          ) : null}
         </div>
       </div>
     </>

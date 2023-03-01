@@ -25,29 +25,6 @@ export default function ChartCointainer() {
   }, [days]);
 
   useEffect(() => {
-<<<<<<< HEAD
-    coinInState.map((crypto) => {
-      const url = `https://api.coingecko.com/api/v3/coins/${crypto}/market_chart?vs_currency=${currency}&days=${days}&interval=${interval}`;
-      axios
-        .get(url)
-        .then((res) => {
-          setTiming(res.data.prices);
-          let temp = {
-            label: crypto,
-            data: res.data.prices.map((price) => price[1]),
-            borderColor: randColor(),
-            backgroundColor: randColor(),
-            pointRadius: "0",
-          };
-
-          let ans = graphdataSetHandler(temp);
-          setGraphDataset(ans);
-          setShouldCallApi(true);
-        })
-        .catch((err) => console.log(err));
-    });
-  }, [interval, currency, days]);
-=======
     console.log(crypto);
     const url = `https://api.coingecko.com/api/v3/coins/${crypto}/market_chart?vs_currency=${currency}&days=${days}&interval=${interval}`;
     console.log(url);
@@ -66,7 +43,6 @@ export default function ChartCointainer() {
       })
       .catch((err) => console.log(err));
   }, [interval, currency, days, crypto]);
->>>>>>> d670a04a42373e8f1bf067d5aa183cc2f11ebb72
 
   // creating random color for chart lines
   const randColor = () => {
@@ -85,45 +61,23 @@ export default function ChartCointainer() {
 
   // data for chart
   const userData = {
-    labels: timeData.map(
-      (time) =>
-        interval === "weekly"
-          ? new Date(time[0]).toLocaleDateString("en-us", {
-              day: "numeric",
-              month: "short",
-              year: "numeric",
-            })
-          : interval === "hourly"
-          ? new Date(time[0]).toLocaleTimeString("en-US", {
-              hour: "2-digit",
-              minute: "2-digit",
-              hour12: true,
-            })
-          : new Date(time[0]).toLocaleDateString("en-us", {
-              day: "numeric",
-              month: "short",
-            })
-      // if (interval === "hourly") {
-      //   console.log("hourly");
-      //   new Date(time[0]).toLocaleTimeString("en-US", {
-      //     hour: "2-digit",
-      //     minute: "2-digit",
-      //     hour12: true,
-      //   });
-      // } else if (interval === "daily") {
-      //   console.log("daily");
-      // new Date(time[0]).toLocaleDateString("en-us", {
-      //   day: "numeric",
-      //   month: "short",
-      // });
-      // } else {
-      //   console.log("weekly");
-      //   new Date(time[0]).toLocaleDateString("en-us", {
-      //     day: "numeric",
-      //     year: "numeric",
-      //     month: "short",
-      //   });
-      // }
+    labels: timeData.map((time) =>
+      interval === "weekly"
+        ? new Date(time[0]).toLocaleDateString("en-us", {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+          })
+        : interval === "hourly"
+        ? new Date(time[0]).toLocaleTimeString("en-US", {
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true,
+          })
+        : new Date(time[0]).toLocaleDateString("en-us", {
+            day: "numeric",
+            month: "short",
+          })
     ),
     datasets: graphDataset,
   };
@@ -164,27 +118,16 @@ export default function ChartCointainer() {
   return (
     <>
       <ChartNavbar chartTypeHandler={chartTypeHandler} />
-<<<<<<< HEAD
-      <div className=" dark:border-0 border-cyan-400  border-2 dark:shadow-black bg-white dark:bg-stone-800  shadow-lg hover:duration-300 hover:shadow-2xl rounded-md md:p-10">
+      <div className=" bg-white dark:bg-stone-800 border-2 border-cyan-400 shadow-lg hover:duration-300 hover:shadow-2xl rounded-xl dark:border-transparent sm:px-10 p-0 sm:pb-10 h-full sm:min-h-fit">
         {chartType === "barHorizontal" && (
-          <Bar data={userData} height={450} options={options1} />
+          <Bar data={userData} height={225} options={options1} />
         )}
         {chartType === "barVertical" && (
-          <Bar data={userData} height={450} options={options} />
+          <Bar data={userData} height={225} options={options} />
         )}
         {chartType === "line" && (
-          <Line data={userData} height={450} options={options} />
+          <Line data={userData} height={225} options={options} />
         )}
-=======
-      <div className=" bg-white dark:bg-stone-800 border-2 border-cyan-400 shadow-lg hover:duration-300 hover:shadow-2xl rounded-xl dark:border-transparent  sm:px-10 p-0 sm:pb-10">
-        {chartType === "barHorizontal" && (
-          <Bar data={userData} height={(450)} options={options1} />
-        )}
-        {chartType === "barVertical" && (
-          <Bar data={userData} height={(450)} options={options} />
-        )}
-        {chartType === "line" && (<Line data={userData} height={(450)} options={options} />)}
->>>>>>> d85929f463fa753a3f4a8b008533b68769a60856
       </div>
     </>
   );
